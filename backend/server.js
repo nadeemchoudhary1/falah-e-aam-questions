@@ -8,7 +8,7 @@ const app = express();
 
 // Security middleware
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  origin: process.env.CORS_ORIGIN || 'https://falah-e-aam-paramedical.netlify.app',
   credentials: true
 }));
 
