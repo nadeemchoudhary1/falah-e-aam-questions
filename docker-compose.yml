@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - FRONTEND_URL=http://localhost:3000
+      - EMAIL_SERVICE=gmail
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_NAME=Coaching Institute
+      - JWT_SECRET=${JWT_SECRET}
+      - CORS_ORIGIN=http://localhost:3000
+    depends_on:
+      - frontend
+    networks:
+      - quiz-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "3000:80"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000/api
+    depends_on:
+      - backend
+    networks:
+      - quiz-network
+    restart: unless-stopped
+
+networks:
+  quiz-network:
+    driver: bridge
