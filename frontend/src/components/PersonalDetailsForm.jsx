@@ -1,27 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import useQuizStore from '../context/quizStore';
 import { quizAPI } from '../utils/api';
-
-const courseOptions = [
-  'Certificate in Medical Laboratory Technology',
-  'Certificate in Operation Theatre Technology',
-  'Certificate in Emergency Medical Technician',
-  'Certificate in X-Ray Technician',
-  'Certificate in ECG Technician',
-  'Certificate in Dialysis Technician',
-  'Certificate in Nursing Assistant',
-  'Certificate in Community Health',
-  'Diploma in Medical Laboratory Technology',
-  'Diploma in Operation Theatre Technology',
-  'Diploma in Radiology and Imaging Technology',
-  'Diploma in Dialysis Technology',
-  'Diploma in ECG Technology',
-  'Diploma in Physiotherapy Assistant',
-  'Diploma in Pharmacy Assistant',
-  'Diploma in Nursing Care Assistant'
-];
 
 const PersonalDetailsForm = () => {
   const navigate = useNavigate();
@@ -32,15 +13,24 @@ const PersonalDetailsForm = () => {
   const setError = useQuizStore((state) => state.setError);
 
   const [formData, setFormData] = useState({
-    fullName: '',
+    fullName: user?.name || '',
     phoneNumber: '',
-    courseName: '',
-    age: '',
+    courseName: user?.subject || '',
     address: ''
   });
 
   const [errors, setErrors] = useState({});
   const [loading, setLoadingState] = useState(false);
+
+  useEffect(() => {
+    if (user) {
+      setFormData((prev) => ({
+        ...prev,
+        fullName: user.name || '',
+        courseName: user.subject || ''
+      }));
+    }
+  }, [user]);
 
   const validateForm = () => {
     const newErrors = {};
@@ -49,24 +39,12 @@ const PersonalDetailsForm = () => {
       newErrors.fullName = 'Full name is required';
     }
 
-    if (!formData.phoneNumber) {
-      newErrors.phoneNumber = 'Phone number is required';
-    } else if (!/^\d{10}$/.test(formData.phoneNumber)) {
+    if (formData.phoneNumber && !/^\d{10}$/.test(formData.phoneNumber)) {
       newErrors.phoneNumber = 'Phone number must be 10 digits';
     }
 
     if (!formData.courseName.trim()) {
       newErrors.courseName = 'Course name is required';
-    }
-
-    if (!formData.age) {
-      newErrors.age = 'Age is required';
-    } else if (isNaN(formData.age) || formData.age < 15 || formData.age > 120) {
-      newErrors.age = 'Age must be between 15 and 120';
-    }
-
-    if (!formData.address.trim()) {
-      newErrors.address = 'Address is required';
     }
 
     setErrors(newErrors);
@@ -96,6 +74,8 @@ const PersonalDetailsForm = () => {
         setQuestionSet(questionResponse.data.questions);
         const detailedFormData = {
           ...formData,
+          fullName: user.name,
+          courseName: user.subject,
           email: user.email,
           subject: questionResponse.data.questions.subject
         };
@@ -142,13 +122,14 @@ const PersonalDetailsForm = () => {
                   errors.fullName ? 'border-danger' : 'border-light focus:border-secondary'
                 }`}
                 disabled={loading}
+                readOnly
               />
               {errors.fullName && <p className="text-danger text-sm mt-1">{errors.fullName}</p>}
             </div>
 
             <div>
               <label className="block text-sm font-semibold text-primary mb-2">
-                Phone Number *
+                Phone Number
               </label>
               <input
                 type="tel"
@@ -168,7 +149,8 @@ const PersonalDetailsForm = () => {
               <label className="block text-sm font-semibold text-primary mb-2">
                 Course Name *
               </label>
-              <select
+              <input
+                type="text"
                 name="courseName"
                 value={formData.courseName}
                 onChange={handleChange}
@@ -176,40 +158,14 @@ const PersonalDetailsForm = () => {
                   errors.courseName ? 'border-danger' : 'border-light focus:border-secondary'
                 }`}
                 disabled={loading}
-              >
-                <option value="">Select course</option>
-                {courseOptions.map((course) => (
-                  <option key={course} value={course}>
-                    {course}
-                  </option>
-                ))}
-              </select>
+                readOnly
+              />
               {errors.courseName && <p className="text-danger text-sm mt-1">{errors.courseName}</p>}
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-semibold text-primary mb-2">
-                  Age *
-                </label>
-                <input
-                  type="number"
-                  name="age"
-                  value={formData.age}
-                  onChange={handleChange}
-                  placeholder="25"
-                  className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition ${
-                    errors.age ? 'border-danger' : 'border-light focus:border-secondary'
-                  }`}
-                  disabled={loading}
-                />
-                {errors.age && <p className="text-danger text-sm mt-1">{errors.age}</p>}
-              </div>
             </div>
 
             <div>
               <label className="block text-sm font-semibold text-primary mb-2">
-                Address *
+                Address
               </label>
               <textarea
                 name="address"

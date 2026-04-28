@@ -20,8 +20,12 @@ const Login = () => {
     try {
       const response = await authAPI.login(email, password);
       if (response.data.success) {
-        setUser(response.data.user);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+        const authenticatedUser = {
+          ...response.data.user,
+          password
+        };
+        setUser(authenticatedUser);
+        localStorage.setItem('user', JSON.stringify(authenticatedUser));
         setTimeout(() => {
           navigate('/personal-details');
         }, 500);
@@ -99,17 +103,6 @@ const Login = () => {
               {loading ? 'Logging in...' : 'Login'}
             </button>
           </form>
-
-          <div className="mt-8 p-4 bg-light rounded-lg text-sm text-gray-700">
-            <h3 className="font-bold text-primary mb-2">Demo Credentials:</h3>
-            <p className="mb-2">
-              <strong>Email:</strong> user1@test.com<br />
-              <strong>Password:</strong> pass123
-            </p>
-            <p className="text-xs text-gray-500 mt-2">
-              Or use any of user2-user5 with pass456, pass789, pass101, pass202
-            </p>
-          </div>
         </div>
       </motion.div>
     </div>

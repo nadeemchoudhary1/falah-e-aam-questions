@@ -1,5 +1,27 @@
+const fs = require('fs');
+const path = require('path');
 const { users } = require('../config/users');
 const { questionSets } = require('../config/questions');
+
+const submissionStorePath = path.join(__dirname, '..', 'data', 'submittedCredentials.json');
+
+const readSubmittedCredentials = () => {
+  try {
+    if (!fs.existsSync(submissionStorePath)) {
+      return [];
+    }
+
+    return JSON.parse(fs.readFileSync(submissionStorePath, 'utf8'));
+  } catch (error) {
+    console.error('Error reading submitted credentials:', error);
+    return [];
+  }
+};
+
+const writeSubmittedCredentials = (submissions) => {
+  fs.mkdirSync(path.dirname(submissionStorePath), { recursive: true });
+  fs.writeFileSync(submissionStorePath, JSON.stringify(submissions, null, 2));
+};
 
 class AuthService {
   validateCredentials(email, password) {
@@ -11,7 +33,8 @@ class AuthService {
           id: user.id,
           email: user.email,
           name: user.name,
-          questionSet: user.questionSet
+          questionSet: user.questionSet,
+          subject: user.subject
         }
       };
     }
@@ -19,6 +42,34 @@ class AuthService {
       success: false,
       message: 'Invalid email or password'
     };
+  }
+
+  getCredentialKey(userId, password) {
+    return `${userId}:${password}`;
+  }
+
+  hasSubmitted(userId, password) {
+    const credentialKey = this.getCredentialKey(userId, password);
+    return readSubmittedCredentials().some((submission) => submission.credentialKey === credentialKey);
+  }
+
+  markSubmitted(userId, email, password) {
+    const submissions = readSubmittedCredentials();
+    const credentialKey = this.getCredentialKey(userId, password);
+
+    if (submissions.some((submission) => submission.credentialKey === credentialKey)) {
+      return;
+    }
+
+    submissions.push({
+      credentialKey,
+      userId,
+      email,
+      password,
+      submittedAt: new Date().toISOString()
+    });
+
+    writeSubmittedCredentials(submissions);
   }
 
   getUserQuestions(questionSetId) {

@@ -75,19 +75,15 @@ class EmailService {
               </tr>
               <tr>
                 <td><strong>Phone:</strong></td>
-                <td>${personalDetails.phoneNumber}</td>
+                <td>${personalDetails.phoneNumber || 'Not provided'}</td>
               </tr>
               <tr>
                 <td><strong>Course:</strong></td>
                 <td>${personalDetails.courseName}</td>
               </tr>
               <tr>
-                <td><strong>Age:</strong></td>
-                <td>${personalDetails.age}</td>
-              </tr>
-              <tr>
                 <td><strong>Address:</strong></td>
-                <td>${personalDetails.address}</td>
+                <td>${personalDetails.address || 'Not provided'}</td>
               </tr>
             </table>
           </div>
@@ -162,10 +158,9 @@ ${process.env.ADMIN_NAME}
 STUDENT INFORMATION
 Name: ${personalDetails.fullName}
 Email: ${userDetails.email}
-Phone: ${personalDetails.phoneNumber}
+Phone: ${personalDetails.phoneNumber || 'Not provided'}
 Course: ${personalDetails.courseName}
-Age: ${personalDetails.age}
-Address: ${personalDetails.address}
+Address: ${personalDetails.address || 'Not provided'}
 
 QUIZ DETAILS
 Subject: ${userDetails.subject}

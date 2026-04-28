@@ -32,13 +32,13 @@ const Submission = () => {
 
       const submissionData = {
         userId: user.id,
+        password: user.password,
         questionSetId: user.questionSet,
         answers: answerArray,
         personalDetails: {
           fullName: personalDetails.fullName,
           phoneNumber: personalDetails.phoneNumber,
           courseName: personalDetails.courseName,
-          age: personalDetails.age,
           address: personalDetails.address,
           email: user.email,
           subject: questionSet.subject

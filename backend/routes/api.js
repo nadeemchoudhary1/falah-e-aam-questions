@@ -64,13 +64,35 @@ router.get('/questions/:questionSetId', (req, res) => {
 // Submit quiz answers
 router.post('/submit', validateSubmission, handleValidationErrors, async (req, res) => {
   try {
-    const { userId, questionSetId, answers, personalDetails } = req.body;
+    const { userId, password, questionSetId, answers, personalDetails } = req.body;
 
     // Validate required fields
-    if (!userId || !questionSetId || !answers || !personalDetails) {
+    if (!userId || !password || !questionSetId || !answers || !personalDetails) {
       return res.status(400).json({
         success: false,
         message: 'Missing required fields'
+      });
+    }
+
+    const credentialCheck = authService.validateCredentials(personalDetails.email, password);
+    if (!credentialCheck.success || credentialCheck.user.id !== Number(userId)) {
+      return res.status(401).json({
+        success: false,
+        message: 'Invalid submission credentials'
+      });
+    }
+
+    if (credentialCheck.user.questionSet !== Number(questionSetId)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid question set for this user'
+      });
+    }
+
+    if (authService.hasSubmitted(userId, password)) {
+      return res.status(409).json({
+        success: false,
+        message: 'This user has already submitted the quiz'
       });
     }
 
@@ -108,6 +130,7 @@ router.post('/submit', validateSubmission, handleValidationErrors, async (req, r
 
     // Send email
     await emailService.sendSubmissionEmail(submissionData);
+    authService.markSubmitted(userId, personalDetails.email, password);
 
     res.json({
       success: true,

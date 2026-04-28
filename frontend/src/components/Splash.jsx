@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import institutionLogo from '../assets/logo.png';
 
 const Splash = () => {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const Splash = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary via-secondary to-primary flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-primary via-secondary to-primary flex items-center justify-center px-4">
       <motion.div
         className="text-center"
         initial={{ opacity: 0, scale: 0.5 }}
@@ -26,8 +27,12 @@ const Splash = () => {
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-24 h-24 mx-auto bg-white rounded-full flex items-center justify-center shadow-2xl">
-            <span className="text-4xl font-bold text-primary">📚</span>
+          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto bg-white rounded-full flex items-center justify-center shadow-2xl p-3">
+            <img
+              src={institutionLogo}
+              alt="Institution logo"
+              className="w-full h-full object-contain"
+            />
           </div>
         </motion.div>
 
@@ -37,7 +42,7 @@ const Splash = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          Coaching Institute
+          Falah E Aam Paramedical Institute
         </motion.h1>
 
         <motion.p
@@ -46,7 +51,7 @@ const Splash = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          Quiz System
+          Online Examination Portal
         </motion.p>
 
         <motion.div

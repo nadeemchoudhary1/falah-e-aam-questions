@@ -15,22 +15,25 @@ const validatePersonalDetails = [
     .notEmpty()
     .withMessage('Full name is required'),
   body('phoneNumber')
+    .optional({ checkFalsy: true })
     .matches(/^[0-9]{10}$/)
     .withMessage('Phone number must be 10 digits'),
   body('courseName')
     .trim()
     .notEmpty()
     .withMessage('Course name is required'),
-  body('age')
-    .isInt({ min: 15, max: 120 })
-    .withMessage('Age must be between 15 and 120'),
   body('address')
+    .optional({ checkFalsy: true })
     .trim()
-    .notEmpty()
-    .withMessage('Address is required')
 ];
 
 const validateSubmission = [
+  body('userId')
+    .notEmpty()
+    .withMessage('User ID is required'),
+  body('password')
+    .notEmpty()
+    .withMessage('Password is required'),
   body('answers')
     .isArray()
     .withMessage('Answers must be an array'),
