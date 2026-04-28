@@ -16,17 +16,17 @@ const Timer = ({ timeRemaining, onTimeEnd }) => {
   const isCritical = timeRemaining <= 60;
 
   return (
-    <div className={`p-4 rounded-lg text-center transition-colors duration-300 ${
+    <div className={`w-28 shrink-0 p-3 rounded-lg text-center transition-colors duration-300 ${
       isCritical ? 'bg-danger text-white' : isWarning ? 'bg-warning text-white' : 'bg-light text-primary'
     }`}>
-      <p className="text-xs font-semibold mb-1">TIME REMAINING</p>
-      <p className={`text-2xl md:text-3xl font-bold ${
+      <p className="text-[10px] md:text-xs font-semibold mb-1 leading-tight">TIME REMAINING</p>
+      <p className={`text-xl md:text-3xl font-bold leading-none ${
         isCritical ? 'animate-pulse' : ''
       }`}>
         {formatTime(timeRemaining)}
       </p>
       {isWarning && (
-        <p className="text-xs mt-1">
+        <p className="text-[10px] md:text-xs mt-1 leading-tight">
           {isCritical ? '⚠️ HURRY UP!' : '⏰ Finish soon'}
         </p>
       )}
@@ -120,9 +120,11 @@ const Quiz = () => {
       {/* Sticky Header */}
       <div className="fixed top-0 left-0 right-0 bg-primary text-white shadow-lg z-40">
         <div className="max-w-4xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex-1">
-              <h2 className="font-bold text-lg truncate">{questionSet.subject}</h2>
+          <div className="flex items-start justify-between gap-3">
+            <div className="min-w-0 flex-1 pt-1">
+              <h2 className="font-bold text-base md:text-lg leading-snug break-words line-clamp-2">
+                {questionSet.subject}
+              </h2>
               <p className="text-sm text-light">Question {currentQuestion + 1} of {totalQuestions}</p>
             </div>
             <Timer timeRemaining={localTime} />
@@ -137,7 +139,7 @@ const Quiz = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 pt-32 md:pt-28">
+      <div className="max-w-4xl mx-auto px-4 pt-40 md:pt-28">
         {/* Question Card */}
         <motion.div
           className="bg-white rounded-lg shadow-lg p-6 mb-6"
