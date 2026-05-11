@@ -279,7 +279,23 @@ const users = [
     questionSet: 11,
     subject: "CMS",
     name: "Test User10"
-  }
+  },
+  {
+    id: 36,
+    email: "jitender@fpmi.co.in",
+    password: "jitender_as_123",
+    questionSet: 4,
+    subject: "DAS (Ayurveda Science)",
+    name: "Jitender Kumar"
+  },
+  {
+    id: 37,
+    email: "syednasar@fpmi.co.in",
+    password: "syednasar_dih_123",
+    questionSet: 9,
+    subject: "DIH (Homeopathy)",
+    name: "Syed Nasar"
+  },
 ]
 
 module.exports = { users };
