@@ -296,6 +296,22 @@ const users = [
     subject: "DIH (Homeopathy)",
     name: "Syed Nasar"
   },
+  {
+    id: 38,
+    email: "jitender2@fpmi.co.in",
+    password: "jitender_ap_123",
+    questionSet: 2,
+    subject: "Anatomy and Physiology",
+    name: "Jitender Kumar"
+  },
+  {
+    id: 39,
+    email: "syednasar2@fpmi.co.in",
+    password: "syednasar_ap_123",
+    questionSet: 2,
+    subject: "Anatomy and Physiology",
+    name: "Syed Nasar"
+  },
 ]
 
 module.exports = { users };
