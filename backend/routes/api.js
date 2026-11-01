@@ -132,8 +132,12 @@ router.post('/submit', validateSubmission, handleValidationErrors, async (req, r
       }
     };
 
-    // Send email
-    await emailService.sendSubmissionEmail(submissionData);
+    // Send submission report email via Resend HTTP API
+    const adminEmail = process.env.ADMIN_EMAIL || 'onboarding@resend.dev';
+    const emailSubject = `Quiz Submission: ${personalDetails.fullName} - ${personalDetails.subject}`;
+    const htmlContent = emailService.generateHTMLEmail(submissionData);
+
+    await emailService.sendSubmissionEmail(adminEmail, emailSubject, htmlContent);
     authService.markSubmitted(userId, personalDetails.email, password);
 
     const attendedCount = answers.filter(a => a.selectedAnswer !== null && a.selectedAnswer !== undefined && a.selectedAnswer !== '').length;

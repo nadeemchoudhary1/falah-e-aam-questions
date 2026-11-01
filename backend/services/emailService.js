@@ -1,34 +1,54 @@
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
+
+// Initialize Resend Client with fallback/development safety
+let resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 class EmailService {
-  constructor() {
-    this.transporter = nodemailer.createTransport({
-      service: process.env.EMAIL_SERVICE || 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD
-      }
-    });
-  }
-
-  async sendSubmissionEmail(submissionData) {
+  /**
+   * Sends submission email via Resend HTTP API (Port 443)
+   * Supports both sendSubmissionEmail(to, subject, htmlContent)
+   * and sendSubmissionEmail(submissionData)
+   */
+  async sendSubmissionEmail(to, subject, htmlContent) {
     try {
-      const htmlContent = this.generateHTMLEmail(submissionData);
-      
-      const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: process.env.ADMIN_EMAIL,
-        subject: `Quiz Submission: ${submissionData.personalDetails.fullName} - ${submissionData.userDetails.subject}`,
-        html: htmlContent,
-        text: this.generatePlainTextEmail(submissionData)
-      };
+      let recipient = to;
+      let emailSubject = subject;
+      let htmlBody = htmlContent;
 
-      const result = await this.transporter.sendMail(mailOptions);
-      console.log('Email sent successfully:', result.messageId);
-      return result;
+      // Support direct submissionData object parameter
+      if (typeof to === 'object' && to !== null && !subject) {
+        const submissionData = to;
+        recipient = process.env.ADMIN_EMAIL || 'onboarding@resend.dev';
+        emailSubject = `Quiz Submission: ${submissionData.personalDetails?.fullName || 'Candidate'} - ${submissionData.userDetails?.subject || 'Examination'}`;
+        htmlBody = this.generateHTMLEmail(submissionData);
+      }
+
+      // Development / Fallback mode if API key is not configured
+      if (!process.env.RESEND_API_KEY) {
+        console.warn('[EmailService] RESEND_API_KEY is not set. Email delivery skipped in development/fallback mode.');
+        return { id: 'dev-mode-mock-email-id' };
+      }
+
+      if (!resend) {
+        resend = new Resend(process.env.RESEND_API_KEY);
+      }
+
+      const response = await resend.emails.send({
+        from: process.env.RESEND_FROM_EMAIL || 'Exam Portal <onboarding@resend.dev>',
+        to: recipient,
+        subject: emailSubject,
+        html: htmlBody
+      });
+
+      if (response.error) {
+        throw new Error(response.error.message);
+      }
+
+      console.log('Email sent successfully via Resend API:', response.data?.id || response.data);
+      return response.data;
     } catch (error) {
-      console.error('Error sending email:', error);
-      throw new Error('Failed to send submission email');
+      console.error('Error sending email via Resend API:', error);
+      throw error; // Propagate up to routing error catcher in api.js
     }
   }
 
@@ -59,7 +79,7 @@ class EmailService {
         <div class="container">
           <div class="header">
             <h1>Quiz Submission Report</h1>
-            <p>${process.env.ADMIN_NAME}</p>
+            <p>${process.env.ADMIN_NAME || 'Falah e Aam Para Medical Institute'}</p>
           </div>
 
           <div class="section">
@@ -138,7 +158,7 @@ class EmailService {
           </div>
 
           <div class="footer">
-            <p>This is an automated email. Please do not reply to this address.</p>
+            <p>This is an automated email sent via Resend HTTP API. Please do not reply to this address.</p>
             <p>Generated on: ${new Date().toLocaleString()}</p>
           </div>
         </div>
@@ -153,7 +173,7 @@ class EmailService {
 
     return `
 Quiz Submission Report
-${process.env.ADMIN_NAME}
+${process.env.ADMIN_NAME || 'Falah e Aam Para Medical Institute'}
 
 STUDENT INFORMATION
 Name: ${personalDetails.fullName}
@@ -171,12 +191,12 @@ SCORE
 ${correctAnswers} / ${questionsAndAnswers.length} (${score.percentage.toFixed(2)}%)
 
 ANSWER DETAILS
-${questionsAndAnswers.map((qa, index) => 
+${questionsAndAnswers.map((qa, index) =>
   `Q${index + 1}: ${qa.question}\n  Selected: ${qa.selectedAnswer}\n  Correct: ${qa.correctAnswer}\n  Status: ${qa.isCorrect ? 'Correct' : 'Incorrect'}\n`
 ).join('')}
 
 ---
-This is an automated email. Please do not reply to this address.
+This is an automated email sent via Resend HTTP API. Please do not reply to this address.
 Generated on: ${new Date().toLocaleString()}
     `;
   }
