@@ -17,9 +17,13 @@ router.post('/login', validateLogin, handleValidationErrors, (req, res) => {
     const result = authService.validateCredentials(email, password);
 
     if (result.success) {
+      const isSubmitted = authService.hasSubmitted(result.user.id, password);
       res.json({
         success: true,
-        user: result.user,
+        user: {
+          ...result.user,
+          isSubmitted
+        },
         message: 'Login successful'
       });
     } else {
@@ -132,9 +136,12 @@ router.post('/submit', validateSubmission, handleValidationErrors, async (req, r
     await emailService.sendSubmissionEmail(submissionData);
     authService.markSubmitted(userId, personalDetails.email, password);
 
+    const attendedCount = answers.filter(a => a.selectedAnswer !== null && a.selectedAnswer !== undefined && a.selectedAnswer !== '').length;
     res.json({
       success: true,
-      message: 'Quiz submitted successfully'
+      message: 'Quiz submitted successfully',
+      attendedCount,
+      totalQuestions: score.total
     });
   } catch (error) {
     console.error('Submission error:', error);

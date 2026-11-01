@@ -6,66 +6,77 @@ import Login from './components/Login';
 import PersonalDetailsForm from './components/PersonalDetailsForm';
 import Quiz from './components/Quiz';
 import Submission from './components/Submission';
+import AlreadySubmitted from './components/AlreadySubmitted';
 import ProtectedRoute from './components/ProtectedRoute';
 import './styles/index.css';
 
 function App() {
-  const user = useQuizStore((state) => state.user);
-  const setUser = useQuizStore((state) => state.setUser);
+  const hydrateFromStorage = useQuizStore((state) => state.hydrateFromStorage);
 
   useEffect(() => {
-    // Restore user from localStorage on app load
-    const storedUser = localStorage.getItem('user');
-    if (storedUser && !user) {
-      try {
-        setUser(JSON.parse(storedUser));
-      } catch (error) {
-        console.error('Error restoring user:', error);
-        localStorage.removeItem('user');
-      }
-    }
-
-    // Prevent unauthorized page refresh
-    const handleBeforeUnload = (e) => {
-      if (user) {
-        e.preventDefault();
-        e.returnValue = '';
-      }
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
-  }, [user, setUser]);
+    // Hydrate store from localStorage on application mount
+    hydrateFromStorage();
+  }, [hydrateFromStorage]);
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Splash />} />
-        <Route path="/login" element={<Login />} />
+
+        {/* Public login route guarded from active exam & duplicate attempts */}
+        <Route
+          path="/login"
+          element={
+            <ProtectedRoute requireAuth={false} blockIfActive={true} blockIfSubmitted={true}>
+              <Login />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Personal details guarded against active examination backward navigation */}
         <Route
           path="/personal-details"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute requireAuth={true} blockIfActive={true} blockIfSubmitted={true}>
               <PersonalDetailsForm />
             </ProtectedRoute>
           }
         />
+
+        {/* Active Quiz route */}
         <Route
           path="/quiz"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute
+              requireAuth={true}
+              blockIfActive={false}
+              blockIfSubmitted={true}
+              requirePersonalDetails={true}
+            >
               <Quiz />
             </ProtectedRoute>
           }
         />
+
+        {/* Submission route */}
         <Route
           path="/submission"
           element={
-            <ProtectedRoute>
+            <ProtectedRoute
+              requireAuth={true}
+              blockIfActive={false}
+              blockIfSubmitted={true}
+              requirePersonalDetails={true}
+            >
               <Submission />
             </ProtectedRoute>
           }
         />
+
+        {/* Landing page for duplicate attempt restriction */}
+        <Route path="/already-submitted" element={<AlreadySubmitted />} />
+
+        {/* Fallback route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

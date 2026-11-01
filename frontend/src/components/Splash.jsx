@@ -2,14 +2,34 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import institutionLogo from '../assets/logo.png';
+import { quizStorage } from '../utils/quizStorage';
 
 const Splash = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/login');
-    }, 3000);
+      const user = quizStorage.getStoredUser();
+      if (user) {
+        // 1. If already submitted in ledger, redirect to already submitted landing page
+        if (quizStorage.isUserSubmitted(user)) {
+          navigate('/already-submitted', { replace: true });
+          return;
+        }
+
+        // 2. Forward-only lockdown: if quiz session is active, resume directly at /quiz
+        if (quizStorage.isQuizActive(user)) {
+          navigate('/quiz', { replace: true });
+          return;
+        }
+
+        // 3. Authenticated user proceeds to personal details
+        navigate('/personal-details', { replace: true });
+        return;
+      }
+
+      navigate('/login', { replace: true });
+    }, 2500);
 
     return () => clearTimeout(timer);
   }, [navigate]);
