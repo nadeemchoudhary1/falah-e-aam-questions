@@ -4589,7 +4589,7 @@ const questionSets = [
   },
   {
     id: 14,
-    subject: 'Hijama Therapy P2 – Hijama Points, Hadith & Infection Control',
+    subject: 'DHT - Hijama Therapy P2 – Hijama Points, Hadith & Infection Control',
     totalMarks: 50,
     questions: [
       {
@@ -5068,7 +5068,7 @@ const questionSets = [
   {
     id: 15,
     subject:
-      'Hijama Therapy P1 – Basic Cupping Therapy, Physiology & Pathology',
+      'DHT - Hijama Therapy P1 – Basic Cupping Therapy, Physiology & Pathology',
     totalMarks: 50,
     questions: [
       {
@@ -8383,610 +8383,960 @@ const questionSets = [
       }
     ]
   },
-  {
-    id: 23,
-    subject: 'DPT - Manual Activities',
-    totalMarks: 50,
-    questions: [
-      {
-        id: 1,
-        question:
-          'Moving a coin from the fingertips to the palm of the hand without using the other hand is an example of:',
-        options: [
-          'Palm-to-finger translation',
-          'Finger-to-palm translation',
-          'Shift',
-          'Simple rotation'
-        ],
-        correct: 'Finger-to-palm translation'
-      },
-      {
-        id: 2,
-        question:
-          'Moving a coin from the palm of the hand back out to the fingertips to place it into a vending machine is called:',
-        options: [
-          'Finger-to-palm translation',
-          'Palm-to-finger translation',
-          'Complex rotation',
-          'Simple shift'
-        ],
-        correct: 'Palm-to-finger translation'
-      },
-      {
-        id: 3,
-        question:
-          'Adjusting a pencil or pen upward or downward between the fingers to position it for writing is classified as:',
-        options: ['Translation', 'Rotation', 'Shift', 'Palmar grasp'],
-        correct: 'Shift'
-      },
-      {
-        id: 4,
-        question:
-          'Turning a pencil over completely (180 degrees) using only one hand to use the eraser on the top end is an example of:',
-        options: [
-          'Simple rotation',
-          'Complex rotation',
-          'Linear shift',
-          'Palm-to-finger translation'
-        ],
-        correct: 'Complex rotation'
-      },
-      {
-        id: 5,
-        question:
-          'Uncreasing or separating two pages of a book using only the thumb and index finger pads of one hand is an example of:',
-        options: [
-          'Shift',
-          'Complex rotation',
-          'Finger-to-palm translation',
-          'Palmar pinch'
-        ],
-        correct: 'Shift'
-      },
-      {
-        id: 6,
-        question:
-          'Turning a small bottle cap open or closed using the pads of the fingers moving together as a unit is an example of:',
-        options: [
-          'Simple rotation',
-          'Complex rotation',
-          'Translation',
-          'Hook grasp'
-        ],
-        correct: 'Simple rotation'
-      },
-      {
-        id: 7,
-        question:
-          "In-hand manipulation skills with 'stabilization' mean that the individual is:",
-        options: [
-          'Using the other hand to hold the wrist steady.',
-          'Holding one or more objects in the palm using the ulnar digits while manipulating another object with the radial digits.',
-          'Resting the elbow flat on a table to prevent tremors.',
-          'Wearing a resting hand splint during the activity.'
-        ],
-        correct:
-          'Holding one or more objects in the palm using the ulnar digits while manipulating another object with the radial digits.'
-      },
-      {
-        id: 8,
-        question:
-          'Which of the following manual activities requires the highest level of in-hand manipulation with stabilization?',
-        options: [
-          'Picking up one marble and dropping it in a cup.',
-          'Holding three marbles in the palm while placing a fourth marble into a small slot using the thumb and index finger.',
-          'Rolling a large ball using both hands on a table surface.',
-          'Squeezing therapeutic putty into a flat pancake.'
-        ],
-        correct:
-          'Holding three marbles in the palm while placing a fourth marble into a small slot using the thumb and index finger.'
-      },
-      {
-        id: 9,
-        question:
-          'At what typical pediatric developmental age do basic in-hand manipulation skills (like finger-to-palm translation) begin to emerge?',
-        options: [
-          '6 to 9 months',
-          '12 to 15 months',
-          '2 to 2.5 years',
-          '6 to 7 years'
-        ],
-        correct: '2 to 2.5 years'
-      },
-      {
-        id: 10,
-        question:
-          'At what age are mature in-hand manipulation skills (such as complex rotation with stabilization) typically mastered by a child?',
-        options: ['18 months', '3 years', '6 to 7 years', '12 to 14 years'],
-        correct: '6 to 7 years'
-      },
-      {
-        id: 11,
-        question:
-          'Which grasp pattern is specifically utilized when a client grips a tennis racket, a hammer, or a rolling pin?',
-        options: [
-          'Spherical Grasp',
-          'Cylindrical Grasp',
-          'Disc Grasp',
-          'Lateral Pinch'
-        ],
-        correct: 'Cylindrical Grasp'
-      },
-      {
-        id: 12,
-        question:
-          'Turning a round doorknob, holding a baseball, or picking up an orange requires which type of power grasp?',
-        options: [
-          'Hook Grasp',
-          'Cylindrical Grasp',
-          'Spherical Grasp',
-          'Tip Pinch'
-        ],
-        correct: 'Spherical Grasp'
-      },
-      {
-        id: 13,
-        question:
-          'Screwing or unscrewing the wide lid of a large jar or holding a flat CD requires which specific grasp pattern?',
-        options: [
-          'Cylindrical Grasp',
-          'Hook Grasp',
-          'Disc Grasp',
-          'Lateral Pinch'
-        ],
-        correct: 'Disc Grasp'
-      },
-      {
-        id: 14,
-        question:
-          'Carrying a briefcase or a heavy grocery bag by its handles using the flexed fingers without using the thumb is called:',
-        options: [
-          'Spherical Grasp',
-          'Hook Grasp',
-          'Power Grip',
-          'Three-Jaw Chuck'
-        ],
-        correct: 'Hook Grasp'
-      },
-      {
-        id: 15,
-        question:
-          'Holding a thin needle or a tiny bead between the absolute tip of the thumb and the tip of the index finger is called:',
-        options: [
-          'Lateral pinch (Key pinch)',
-          'Palmar pinch (Three-jaw chuck)',
-          'Tip-to-tip pinch (Fine pincer)',
-          'Spherical grasp'
-        ],
-        correct: 'Tip-to-tip pinch (Fine pincer)'
-      },
-      {
-        id: 16,
-        question:
-          'Holding a standard door key to unlock a deadbolt utilizes which type of functional pinch?',
-        options: [
-          'Tip-to-tip pinch',
-          'Three-jaw chuck',
-          'Lateral pinch (Key pinch)',
-          'Hook grasp'
-        ],
-        correct: 'Lateral pinch (Key pinch)'
-      },
-      {
-        id: 17,
-        question:
-          'Holding a block, a marble, or a large chalk piece using the pads of the thumb, index, and middle fingers together is called:',
-        options: [
-          'Lateral pinch',
-          'Tip pinch',
-          'Three-jaw chuck (Palmar pinch)',
-          'Dynamic tripod grasp'
-        ],
-        correct: 'Three-jaw chuck (Palmar pinch)'
-      },
-      {
-        id: 18,
-        question:
-          "What is the main anatomical difference between a 'power grasp' and a 'precision grasp'?",
-        options: [
-          'Power grasps involve only the index finger, while precision involves all digits.',
-          'Power grasps use the palm for stability and force, while precision grasps utilize the pads of the fingers and thumb for control without palmar contact.',
-          'Power grasps are strictly used by adults, while precision grasps are used by infants.',
-          'There is no mechanical or functional difference between them.'
-        ],
-        correct:
-          'Power grasps use the palm for stability and force, while precision grasps utilize the pads of the fingers and thumb for control without palmar contact.'
-      },
-      {
-        id: 19,
-        question:
-          'Which grasp represents the most primitive, immature phase of pencil grip seen in toddlers (around 1–1.5 years old)?',
-        options: [
-          'Digital pronate grasp',
-          'Static tripod grasp',
-          'Palmar supinate grasp (Fisted grasp)',
-          'Dynamic tripod grasp'
-        ],
-        correct: 'Palmar supinate grasp (Fisted grasp)'
-      },
-      {
-        id: 20,
-        question:
-          'When a child holds a crayon with their fingers pointed down toward the paper, the forearm pronated, and the movement coming from the elbow/shoulder, they are using a:',
-        options: [
-          'Palmar supinate grasp',
-          'Digital pronate grasp',
-          'Dynamic tripod grasp',
-          'Lateral pinch'
-        ],
-        correct: 'Digital pronate grasp'
-      },
-      {
-        id: 21,
-        question:
-          'Cutting out a circle on a sheet of paper with scissors requires which type of bilateral integration?',
-        options: [
-          'Symmetrical bilateral coordination',
-          'Asymmetrical bilateral coordination (Reciprocal)',
-          'Asymmetrical bilateral coordination with differing roles (One leading, one stabilizing/helping)',
-          'Unilateral isolation'
-        ],
-        correct:
-          'Asymmetrical bilateral coordination with differing roles (One leading, one stabilizing/helping)'
-      },
-      {
-        id: 22,
-        question:
-          'Rolling a piece of dough with a rolling pin using both hands simultaneously in the exact same motion is an example of:',
-        options: [
-          'Symmetrical bilateral coordination',
-          'Asymmetrical bilateral coordination',
-          'In-hand manipulation',
-          'Dissociated movement'
-        ],
-        correct: 'Symmetrical bilateral coordination'
-      },
-      {
-        id: 23,
-        question:
-          'Climbing a ladder or riding a bicycle (pedaling alternating sides) is an example of:',
-        options: [
-          'Symmetrical movement',
-          'Reciprocal bilateral coordination',
-          'Unilateral isolation',
-          'Non-functional coordination'
-        ],
-        correct: 'Reciprocal bilateral coordination'
-      },
-      {
-        id: 24,
-        question:
-          'Hand preference or true hand dominance is typically established and stable in a developing child by what age?',
-        options: ['6 months', '12 months', '4 to 5 years', '10 to 12 years'],
-        correct: '4 to 5 years'
-      },
-      {
-        id: 25,
-        question:
-          'If a child consistently crosses the midline of their body during manual activities, it shows:',
-        options: [
-          'Normal neurological and bilateral integration development.',
-          'Severe motor planning dysfunction requiring immediate surgical care.',
-          'Avoidance of hand dominance patterns.',
-          'Structural weakness of the ulnar nerve.'
-        ],
-        correct: 'Normal neurological and bilateral integration development.'
-      },
-      {
-        id: 26,
-        question:
-          'An activity that involves stabilizing a jar with the non-dominant hand while unscrewing the lid with the dominant hand is called:',
-        options: [
-          'Symmetrical manipulation',
-          'Bimanual asymmetrical activity',
-          'Cross-education drill',
-          'Uni-manual baseline task'
-        ],
-        correct: 'Bimanual asymmetrical activity'
-      },
-      {
-        id: 27,
-        question:
-          'Buttoning a shirt or tying shoelaces are excellent clinical examples of:',
-        options: [
-          'Purely symmetrical gross motor actions',
-          'Fine motor asymmetrical bimanual tasks',
-          'Passive range of motion procedures',
-          'Unilateral upper extremity reflexes'
-        ],
-        correct: 'Fine motor asymmetrical bimanual tasks'
-      },
-      {
-        id: 28,
-        question:
-          'Which structure in the brain allows for the rapid interhemispheric communication required for complex manual activities and bilateral coordination?',
-        options: [
-          'Cerebellum',
-          'Corpus Callosum',
-          'Basal Ganglia',
-          'Medulla Oblongata'
-        ],
-        correct: 'Corpus Callosum'
-      },
-      {
-        id: 29,
-        question:
-          "When a child strings small beads onto a lace, the primary hand threading the needle is the 'lead' hand. What is the role of the other hand?",
-        options: [
-          'It performs an identical lead action.',
-          "It acts as the dynamic stabilizer or 'helper' hand.",
-          'It has no role and should remain completely passive.',
-          'It relies entirely on primitive spinal reflexes.'
-        ],
-        correct: "It acts as the dynamic stabilizer or 'helper' hand."
-      },
-      {
-        id: 30,
-        question:
-          'Zipper management on a heavy winter jacket requires which sequence of manual skills?',
-        options: [
-          'Unilateral extension followed by passive rest',
-          'Symmetrical push followed by dynamic tripod pinch',
-          'Bilateral stabilization, engagement of the pin, and asymmetrical pulling',
-          'Purely isometric finger-to-palm translations'
-        ],
-        correct:
-          'Bilateral stabilization, engagement of the pin, and asymmetrical pulling'
-      },
-      {
-        id: 31,
-        question:
-          'Which standardized assessment evaluates fine motor manual dexterity by requiring a client to place 9 small wooden pegs into a 9-hole board as quickly as possible?',
-        options: [
-          'Box and Blocks Test',
-          'Nine-Hole Peg Test (NHPT)',
-          'Jebsen Hand Function Test',
-          'Minnesota Manual Dexterity Test'
-        ],
-        correct: 'Nine-Hole Peg Test (NHPT)'
-      },
-      {
-        id: 32,
-        question:
-          'The Box and Blocks Test (BBT) is primarily utilized by OTs to measure which aspect of manual function?',
-        options: [
-          'Finger-tip pinch strength in pounds',
-          'Gross manual dexterity and the speed of moving blocks from one compartment to another',
-          'In-hand complex rotation capabilities',
-          'Tactile sensitivity and stereognosis'
-        ],
-        correct:
-          'Gross manual dexterity and the speed of moving blocks from one compartment to another'
-      },
-      {
-        id: 33,
-        question:
-          'Which assessment mimics everyday manual activities by testing tasks such as writing a sentence, card turning, stacking checkers, and picking up small common objects?',
-        options: [
-          'Nine-Hole Peg Test',
-          'Jebsen Hand Function Test (JHFT)',
-          'Dynamometer Testing',
-          'Purdue Pegboard Test'
-        ],
-        correct: 'Jebsen Hand Function Test (JHFT)'
-      },
-      {
-        id: 34,
-        question:
-          "What instrument is universally used in occupational therapy clinics to objectively measure a client's gross grip strength?",
-        options: [
-          'Pinch gauge',
-          'Hydraulic Hand Dynamometer',
-          'Goniometer',
-          'Aestheticometer'
-        ],
-        correct: 'Hydraulic Hand Dynamometer'
-      },
-      {
-        id: 35,
-        question:
-          'To measure standard pinch strength (tip pinch, lateral pinch, palmar pinch), an OT uses which specific device?',
-        options: ['Dynamometer', 'Pinch Gauge', 'Volumeter', 'Algometer'],
-        correct: 'Pinch Gauge'
-      },
-      {
-        id: 36,
-        question:
-          "When testing grip strength with a hydraulic dynamometer, what is the standard recommended testing position for the client's arm?",
-        options: [
-          'Shoulder abducted to 90°, elbow fully straight.',
-          'Shoulder adducted, elbow flexed to 90°, wrist in neutral to slight extension.',
-          'Shoulder internally rotated, wrist fully flexed down.',
-          'Forearm fully pronated flat on a table with elbow at 180°.'
-        ],
-        correct:
-          'Shoulder adducted, elbow flexed to 90°, wrist in neutral to slight extension.'
-      },
-      {
-        id: 37,
-        question:
-          'The Purdue Pegboard Test assesses fine fingertip dexterity and manual coordination required for which types of real-world tasks?',
-        options: [
-          'Heavy construction work and lifting',
-          'Assembly line tasks, industrial packing, and precision mechanical work',
-          'Gross balancing during ambulation',
-          'Large muscle cooking activities'
-        ],
-        correct:
-          'Assembly line tasks, industrial packing, and precision mechanical work'
-      },
-      {
-        id: 38,
-        question:
-          'The ability to identify a common object (like a key, coin, or safety pin) placed in the hand solely through manual touch and manipulation, without visual input, is called:',
-        options: [
-          'Graphesthesia',
-          'Stereognosis',
-          'Two-point discrimination',
-          'Proprioception'
-        ],
-        correct: 'Stereognosis'
-      },
-      {
-        id: 39,
-        question:
-          'If a patient cannot identify a key placed in their hand without looking at it, despite having intact light touch sensation, they are demonstrating:',
-        options: [
-          'Tactile defensiveness',
-          'Astereognosis',
-          'Motor apraxia',
-          'Ulnar tunnel syndrome'
-        ],
-        correct: 'Astereognosis'
-      },
-      {
-        id: 40,
-        question:
-          'What does a static two-point discrimination test primarily evaluate in manual diagnostics?',
-        options: [
-          'Gross muscle contraction speed',
-          'Digital tactile gnosis and density of functional sensory receptors in the fingertips',
-          'Tendon gliding length',
-          'In-hand manipulation capacity'
-        ],
-        correct:
-          'Digital tactile gnosis and density of functional sensory receptors in the fingertips'
-      },
-      {
-        id: 41,
-        question:
-          "An OT wants to 'grade up' a manual activity involving therapeutic putty to increase strength. What should the therapist do?",
-        options: [
-          'Use a softer, less resistive color of putty.',
-          'Switch to a firmer, high-resistance color of putty and increase the time spent squeezing.',
-          'Have the patient sit down instead of standing up.',
-          'Decrease the total volume of putty used.'
-        ],
-        correct:
-          'Switch to a firmer, high-resistance color of putty and increase the time spent squeezing.'
-      },
-      {
-        id: 42,
-        question:
-          'For a client with severe rheumatoid arthritis presenting with pain and hand deformities, an OT would recommend adaptive manual tools that have:',
-        options: [
-          'Extra-thin, heavy metal handles to increase muscle load.',
-          'Built-up, lightweight foam handles to reduce joint stress and finger flexion requirements.',
-          'No handles, requiring pure fingertip pinches.',
-          'Sharp, cold surfaces to stimulate tactile receptors.'
-        ],
-        correct:
-          'Built-up, lightweight foam handles to reduce joint stress and finger flexion requirements.'
-      },
-      {
-        id: 43,
-        question:
-          'A client with a weak grasp wants to write independently. Which adaptive equipment is most appropriate to recommend?',
-        options: [
-          'A button hook',
-          'A weighted built-up pen grip or a universal cuff holding a pen',
-          'Elastic shoelaces',
-          'A long-handled shoehorn'
-        ],
-        correct:
-          'A weighted built-up pen grip or a universal cuff holding a pen'
-      },
-      {
-        id: 44,
-        question:
-          'Which manual therapy intervention involves repetitive, intensive practice of functional manual activities using the affected hand while restraining the unaffected hand in a mitt or sling?',
-        options: [
-          'Neurodevelopmental Treatment (NDT)',
-          'Constraint-Induced Movement Therapy (CIMT)',
-          'Proprioceptive Neuromuscular Facilitation (PNF)',
-          'Sensory Integration Therapy'
-        ],
-        correct: 'Constraint-Induced Movement Therapy (CIMT)'
-      },
-      {
-        id: 45,
-        question:
-          'To encourage a child to develop an isolated pincer grasp during a manual craft activity, which material would be best?',
-        options: [
-          'Large, heavy wooden blocks',
-          'Small pom-poms, stickers, or Cheerios to pick up',
-          'A full container of heavy liquid glue',
-          'A wide paintbrush with a thick handle'
-        ],
-        correct: 'Small pom-poms, stickers, or Cheerios to pick up'
-      },
-      {
-        id: 46,
-        question:
-          'Hand exercises using clothes-pins to clip onto the edge of a box are primarily used to strengthen which manual functions?',
-        options: [
-          'Hook grasp power',
-          'Intrinsic muscles and fingertip pinch strength (tip/lateral pinch)',
-          'Gross elbow extension velocity',
-          'Forearm supination range'
-        ],
-        correct:
-          'Intrinsic muscles and fingertip pinch strength (tip/lateral pinch)'
-      },
-      {
-        id: 47,
-        question:
-          "When an OT uses 'tendon gliding exercises' for a patient post-carpal tunnel release, what is the core purpose?",
-        options: [
-          'To build maximum grip power using heavy dumbbells.',
-          'To ensure maximum smooth excursion and movement of the flexor tendons within the carpal tunnel, preventing adhesions.',
-          'To permanently freeze the joints in a static posture.',
-          'To stretch the skin surface of the dorsal hand.'
-        ],
-        correct:
-          'To ensure maximum smooth excursion and movement of the flexor tendons within the carpal tunnel, preventing adhesions.'
-      },
-      {
-        id: 48,
-        question:
-          "Why is 'crumpling a single sheet of newspaper into a small tight ball using only one hand' a great therapeutic manual activity?",
-        options: [
-          'It increases shoulder range of motion.',
-          'It facilitates complete hand opening, intrinsic muscle activation, and in-hand coordination.',
-          "It tests the patient's visual field deficits.",
-          'It acts as a passive sensory modality.'
-        ],
-        correct:
-          'It facilitates complete hand opening, intrinsic muscle activation, and in-hand coordination.'
-      },
-      {
-        id: 49,
-        question:
-          "An OT recommends a 'universal cuff' for a patient with a spinal cord injury at the C6 level. What manual function does this assist with?",
-        options: [
-          'It holds utensils or grooming tools for individuals who lack active finger grip function.',
-          'It stretches the elbow joint into full extension.',
-          'It stabilizes the ankle during transfers.',
-          'It measures sweat production on the palm.'
-        ],
-        correct:
-          'It holds utensils or grooming tools for individuals who lack active finger grip function.'
-      },
-      {
-        id: 50,
-        question:
-          "What is the benefit of using 'graded pegs' (from extra-large to extra-small) in manual rehabilitation?",
-        options: [
-          'It provides a method to change the difficulty from gross grasp to fine precision pinches as the client improves.',
-          'It focuses entirely on lower limb balance.',
-          'It removes the need for patient motivation.',
-          'It is an purely passive sensory stimulation technique.'
-        ],
-        correct:
-          'It provides a method to change the difficulty from gross grasp to fine precision pinches as the client improves.'
-      }
-    ]
-  },
+{
+  id: 23,
+  subject: "DPT - Basic Occupational Therapy & Manual Activities",
+  totalMarks: 50,
+  questions: [
+    // BASIC OCCUPATIONAL THERAPY (25 QUESTIONS)
+
+    {
+      id: 1,
+      question: "How does occupational therapy fundamentally define an 'occupation'?",
+      options: [
+        "Paid employment or a professional career pursued by an individual.",
+        "Daily activities of living that people find meaningful, purposeful, and valuable.",
+        "Physical exercises prescribed strictly to build muscle strength.",
+        "Medical interventions and surgical procedures aimed at disease eradication."
+      ],
+      correct: "Daily activities of living that people find meaningful, purposeful, and valuable."
+    },
+    {
+      id: 2,
+      question: "Which historical movement laid the philosophical groundwork for occupational therapy by engaging individuals with mental illness in crafts and useful work?",
+      options: [
+        "The Biomechanical Movement",
+        "The Rehabilitation Movement",
+        "The Moral Treatment Movement",
+        "The Cognitive-Behavioral Era"
+      ],
+      correct: "The Moral Treatment Movement"
+    },
+    {
+      id: 3,
+      question: "What is the core distinction between occupational therapy (OT) and physical therapy (PT)?",
+      options: [
+        "OT focuses on enabling engagement in meaningful daily occupations, whereas PT primarily focuses on restoring physical function and mobility.",
+        "OT only treats pediatric populations, while PT only treats geriatric patients.",
+        "OT utilizes passive modalities exclusively, whereas PT utilizes active exercises.",
+        "There is no fundamental difference; the terms are completely interchangeable."
+      ],
+      correct: "OT focuses on enabling engagement in meaningful daily occupations, whereas PT primarily focuses on restoring physical function and mobility."
+    },
+    {
+      id: 4,
+      question: "In client-centered practice, what role does the occupational therapist primarily assume?",
+      options: [
+        "An authoritative director who dictates the exact home program.",
+        "A passive observer who only documents changes without offering professional input.",
+        "A medical diagnostician who determines the underlying disease process.",
+        "A collaborative partner who works alongside the client to identify goals."
+      ],
+      correct: "A collaborative partner who works alongside the client to identify goals."
+    },
+    {
+      id: 5,
+      question: "Who is recognized as the 'Mother of Occupational Therapy' for her role in developing habit training programs?",
+      options: [
+        "Susan Cox Johnson",
+        "Eleanor Clarke Slagle",
+        "Isabel Newton",
+        "Clare Spackman"
+      ],
+      correct: "Eleanor Clarke Slagle"
+    },
+    {
+      id: 6,
+      question: "Which model emphasizes the dynamic interaction between Person, Environment, and Occupation?",
+      options: [
+        "The Biomechanical Model",
+        "The PEO Model",
+        "The Psychoanalytic Model",
+        "The Medical Model"
+      ],
+      correct: "The PEO Model"
+    },
+    {
+      id: 7,
+      question: "What does the acronym MOHO stand for in occupational therapy?",
+      options: [
+        "Movement and Occupational Health Organization",
+        "Model of Human Occupation",
+        "Method of Occupational Habilitation Options",
+        "Management of Occupational Healthcare Outcomes"
+      ],
+      correct: "Model of Human Occupation"
+    },
+    {
+      id: 8,
+      question: "According to the Model of Human Occupation (MOHO), what drives a person's motivation for occupation?",
+      options: [
+        "Volition",
+        "Habituation",
+        "Performance Capacity",
+        "Environment"
+      ],
+      correct: "Volition"
+    },
+    {
+      id: 9,
+      question: "According to the OTPF, which of the following is classified under the 'Domains' of occupational therapy?",
+      options: [
+        "Evaluation Process",
+        "Intervention Implementation",
+        "Client Factors",
+        "Targeting of Outcomes"
+      ],
+      correct: "Client Factors"
+    },
+    {
+      id: 10,
+      question: "Showering, dressing, and functional mobility are categorized under which specific area of occupation?",
+      options: [
+        "Instrumental Activities of Daily Living (IADLs)",
+        "Activities of Daily Living (ADLs)",
+        "Health Management",
+        "Work"
+      ],
+      correct: "Activities of Daily Living (ADLs)"
+    },
+    {
+      id: 11,
+      question: "Meal preparation, shopping, financial management, and care of pets are categorized under:",
+      options: [
+        "Basic ADLs",
+        "Instrumental Activities of Daily Living (IADLs)",
+        "Leisure",
+        "Rest and Sleep"
+      ],
+      correct: "Instrumental Activities of Daily Living (IADLs)"
+    },
+    {
+      id: 12,
+      question: "Habits, routines, roles, and rituals are grouped under which category in the OTPF?",
+      options: [
+        "Performance Skills",
+        "Performance Patterns",
+        "Client Factors",
+        "Contexts"
+      ],
+      correct: "Performance Patterns"
+    },
+    {
+      id: 13,
+      question: "What are the three broad components of the Occupational Therapy 'Process' described in the OTPF?",
+      options: [
+        "Assessment, Diagnosis, Treatment",
+        "Evaluation, Intervention, Outcomes",
+        "Screening, Exercising, Discharge",
+        "Referral, Evaluation, Billing"
+      ],
+      correct: "Evaluation, Intervention, Outcomes"
+    },
+    {
+      id: 14,
+      question: "An 'Occupational Profile' is completed during which phase of the OT process?",
+      options: [
+        "Intervention Implementation",
+        "Outcomes Evaluation",
+        "Evaluation",
+        "Discharge Planning"
+      ],
+      correct: "Evaluation"
+    },
+    {
+      id: 15,
+      question: "A child who has difficulty processing sensory information, such as being hypersensitive to textures or loud tags on clothing, may benefit from which framework?",
+      options: [
+        "Biomechanical Frame of Reference",
+        "Sensory Integration (SI) Approach",
+        "Neurodevelopmental Treatment (NDT)",
+        "Rehabilitative Model"
+      ],
+      correct: "Sensory Integration (SI) Approach"
+    },
+    {
+      id: 16,
+      question: "In hand functions, shifting a pencil from the palm to the fingertips using one hand is an example of:",
+      options: [
+        "Translation",
+        "Rotation",
+        "Shift",
+        "Palmar grasp"
+      ],
+      correct: "Translation"
+    },
+    {
+      id: 17,
+      question: "What type of play is characterized by children playing side-by-side with similar toys but without direct interaction, typical around 2 years of age?",
+      options: [
+        "Solitary Play",
+        "Parallel Play",
+        "Associative Play",
+        "Cooperative Play"
+      ],
+      correct: "Parallel Play"
+    },
+    {
+      id: 18,
+      question: "Which specialized writing grasp is considered the most efficient and mature for school-aged children?",
+      options: [
+        "Palmar Supinate Grasp",
+        "Digital Pronate Grasp",
+        "Dynamic Tripod Grasp",
+        "Static Quadripod Grasp"
+      ],
+      correct: "Dynamic Tripod Grasp"
+    },
+    {
+      id: 19,
+      question: "What is the primary mechanical difference between a static splint and a dynamic splint?",
+      options: [
+        "Static splints are made of rubber, while dynamic splints are made of metal exclusively.",
+        "Static splints have no moving parts and immobilize a joint, whereas dynamic splints incorporate elastic components or springs to assist or mobilize joint motion.",
+        "Dynamic splints are worn strictly at night during sleep.",
+        "Static splints require constant active movement by the client."
+      ],
+      correct: "Static splints have no moving parts and immobilize a joint, whereas dynamic splints incorporate elastic components or springs to assist or mobilize joint motion."
+    },
+    {
+      id: 20,
+      question: "A patient presents with a radial nerve injury resulting in a 'wrist drop.' Which orthosis (splint) is most appropriate to support functional use of the hand?",
+      options: [
+        "Anti-spasticity ball splint",
+        "Thumb spica splint",
+        "Wrist cock-up splint (extension splint)",
+        "Resting hand splint"
+      ],
+      correct: "Wrist cock-up splint (extension splint)"
+    },
+    {
+      id: 21,
+      question: "When a therapist manually moves a client's joint through its full range of motion because the client has zero muscle activation, what type of exercise is being performed?",
+      options: [
+        "Active Range of Motion (AROM)",
+        "Passive Range of Motion (PROM)",
+        "Resistive Strengthening Exercise",
+        "Isometric Contraction Exercise"
+      ],
+      correct: "Passive Range of Motion (PROM)"
+    },
+    {
+      id: 22,
+      question: "An isometric exercise is best described as:",
+      options: [
+        "Joint movement through a full arc with constant speed and variable load.",
+        "Lifting free weights through concentric and eccentric phases.",
+        "Muscle contraction producing force without a change in muscle length or visible joint movement.",
+        "Stretching tight ligaments past their elastic limit."
+      ],
+      correct: "Muscle contraction producing force without a change in muscle length or visible joint movement."
+    },
+    {
+      id: 23,
+      question: "Which intervention approach focuses on modifying the environment or using adaptive equipment to enhance a client's independence when restoration of functions is not fully possible?",
+      options: [
+        "Biomechanical Approach",
+        "Compensatory/Adaptive Approach",
+        "Remedial Approach",
+        "Psychodynamic Approach"
+      ],
+      correct: "Compensatory/Adaptive Approach"
+    },
+    {
+      id: 24,
+      question: "A button hook, long-handled shoehorn, and elastic shoelaces are examples of:",
+      options: [
+        "Restrictive orthoses",
+        "Adaptive equipment/Assistive technology",
+        "Modalities for sensory integration",
+        "Manual therapy tools"
+      ],
+      correct: "Adaptive equipment/Assistive technology"
+    },
+    {
+      id: 25,
+      question: "What is the ultimate goal of all occupational therapy interventions?",
+      options: [
+        "To make sure the client can lift maximal heavy weights in the gym.",
+        "To achieve full anatomical structural symmetry across all muscles.",
+        "To maximize a person's independence, health, well-being, and participation in daily life occupations.",
+        "To replace the role of primary care physicians in a hospital network."
+      ],
+      correct: "To maximize a person's independence, health, well-being, and participation in daily life occupations."
+    },
+
+    // MANUAL ACTIVITIES (25 QUESTIONS)
+
+    {
+      id: 26,
+      question: "Moving a coin from the fingertips to the palm of the hand without using the other hand is an example of:",
+      options: [
+        "Palm-to-finger translation",
+        "Finger-to-palm translation",
+        "Shift",
+        "Simple rotation"
+      ],
+      correct: "Finger-to-palm translation"
+    },
+    {
+      id: 27,
+      question: "Moving a coin from the palm of the hand back out to the fingertips to place it into a vending machine is called:",
+      options: [
+        "Finger-to-palm translation",
+        "Palm-to-finger translation",
+        "Complex rotation",
+        "Simple shift"
+      ],
+      correct: "Palm-to-finger translation"
+    },
+    {
+      id: 28,
+      question: "Adjusting a pencil or pen upward or downward between the fingers to position it for writing is classified as:",
+      options: [
+        "Translation",
+        "Rotation",
+        "Shift",
+        "Palmar grasp"
+      ],
+      correct: "Shift"
+    },
+    {
+      id: 29,
+      question: "Turning a pencil over completely (180 degrees) using only one hand to use the eraser on the top end is an example of:",
+      options: [
+        "Simple rotation",
+        "Complex rotation",
+        "Linear shift",
+        "Palm-to-finger translation"
+      ],
+      correct: "Complex rotation"
+    },
+    {
+      id: 30,
+      question: "In-hand manipulation skills with 'stabilization' mean that the individual is:",
+      options: [
+        "Using the other hand to hold the wrist steady.",
+        "Holding one or more objects in the palm using the ulnar digits while manipulating another object with the radial digits.",
+        "Resting the elbow flat on a table to prevent tremors.",
+        "Wearing a resting hand splint during the activity."
+      ],
+      correct: "Holding one or more objects in the palm using the ulnar digits while manipulating another object with the radial digits."
+    },
+    {
+      id: 31,
+      question: "Which of the following manual activities requires the highest level of in-hand manipulation with stabilization?",
+      options: [
+        "Picking up one marble and dropping it in a cup.",
+        "Holding three marbles in the palm while placing a fourth marble into a small slot using the thumb and index finger.",
+        "Rolling a large ball using both hands on a table surface.",
+        "Squeezing therapeutic putty into a flat pancake."
+      ],
+      correct: "Holding three marbles in the palm while placing a fourth marble into a small slot using the thumb and index finger."
+    },
+    {
+      id: 32,
+      question: "Which grasp pattern is specifically utilized when a client grips a tennis racket, a hammer, or a rolling pin?",
+      options: [
+        "Spherical Grasp",
+        "Cylindrical Grasp",
+        "Disc Grasp",
+        "Lateral Pinch"
+      ],
+      correct: "Cylindrical Grasp"
+    },
+    {
+      id: 33,
+      question: "Turning a round doorknob, holding a baseball, or picking up an orange requires which type of power grasp?",
+      options: [
+        "Hook Grasp",
+        "Cylindrical Grasp",
+        "Spherical Grasp",
+        "Tip Pinch"
+      ],
+      correct: "Spherical Grasp"
+    },
+    {
+      id: 34,
+      question: "Carrying a briefcase or a heavy grocery bag by its handles using the flexed fingers without using the thumb is called:",
+      options: [
+        "Spherical Grasp",
+        "Hook Grasp",
+        "Power Grip",
+        "Three-Jaw Chuck"
+      ],
+      correct: "Hook Grasp"
+    },
+    {
+      id: 35,
+      question: "Holding a thin needle or a tiny bead between the absolute tip of the thumb and the tip of the index finger is called:",
+      options: [
+        "Lateral pinch (Key pinch)",
+        "Palmar pinch (Three-jaw chuck)",
+        "Tip-to-tip pinch (Fine pincer)",
+        "Spherical grasp"
+      ],
+      correct: "Tip-to-tip pinch (Fine pincer)"
+    },
+    {
+      id: 36,
+      question: "Holding a standard door key to unlock a deadbolt utilizes which type of functional pinch?",
+      options: [
+        "Tip-to-tip pinch",
+        "Three-jaw chuck",
+        "Lateral pinch (Key pinch)",
+        "Hook grasp"
+      ],
+      correct: "Lateral pinch (Key pinch)"
+    },
+    {
+      id: 37,
+      question: "Holding a block, a marble, or a large chalk piece using the pads of the thumb, index, and middle fingers together is called:",
+      options: [
+        "Lateral pinch",
+        "Tip pinch",
+        "Three-jaw chuck (Palmar pinch)",
+        "Dynamic tripod grasp"
+      ],
+      correct: "Three-jaw chuck (Palmar pinch)"
+    },
+    {
+      id: 38,
+      question: "What is the main anatomical difference between a 'power grasp' and a 'precision grasp'?",
+      options: [
+        "Power grasps involve only the index finger, while precision involves all digits.",
+        "Power grasps use the palm for stability and force, while precision grasps utilize the pads of the fingers and thumb for control without palmar contact.",
+        "Power grasps are strictly used by adults, while precision grasps are used by infants.",
+        "There is no mechanical or functional difference between them."
+      ],
+      correct: "Power grasps use the palm for stability and force, while precision grasps utilize the pads of the fingers and thumb for control without palmar contact."
+    },
+    {
+      id: 39,
+      question: "Cutting out a circle on a sheet of paper with scissors requires which type of bilateral integration?",
+      options: [
+        "Symmetrical bilateral coordination",
+        "Asymmetrical bilateral coordination (Reciprocal)",
+        "Asymmetrical bilateral coordination with differing roles (One leading, one stabilizing/helping)",
+        "Unilateral isolation"
+      ],
+      correct: "Asymmetrical bilateral coordination with differing roles (One leading, one stabilizing/helping)"
+    },
+    {
+      id: 40,
+      question: "Rolling a piece of dough with a rolling pin using both hands simultaneously in the exact same motion is an example of:",
+      options: [
+        "Symmetrical bilateral coordination",
+        "Asymmetrical bilateral coordination",
+        "In-hand manipulation",
+        "Dissociated movement"
+      ],
+      correct: "Symmetrical bilateral coordination"
+    },
+    {
+      id: 41,
+      question: "Climbing a ladder or riding a bicycle (pedaling alternating sides) is an example of:",
+      options: [
+        "Symmetrical movement",
+        "Reciprocal bilateral coordination",
+        "Unilateral isolation",
+        "Non-functional coordination"
+      ],
+      correct: "Reciprocal bilateral coordination"
+    },
+    {
+      id: 42,
+      question: "Hand preference or true hand dominance is typically established and stable in a developing child by what age?",
+      options: [
+        "6 months",
+        "12 months",
+        "4 to 5 years",
+        "10 to 12 years"
+      ],
+      correct: "4 to 5 years"
+    },
+    {
+      id: 43,
+      question: "Which standardized assessment evaluates fine motor manual dexterity by requiring a client to place 9 small wooden pegs into a 9-hole board as quickly as possible?",
+      options: [
+        "Box and Blocks Test",
+        "Nine-Hole Peg Test (NHPT)",
+        "Jebsen Hand Function Test",
+        "Minnesota Manual Dexterity Test"
+      ],
+      correct: "Nine-Hole Peg Test (NHPT)"
+    },
+    {
+      id: 44,
+      question: "The Box and Blocks Test (BBT) is primarily utilized by OTs to measure which aspect of manual function?",
+      options: [
+        "Finger-tip pinch strength in pounds",
+        "Gross manual dexterity and the speed of moving blocks from one compartment to another",
+        "In-hand complex rotation capabilities",
+        "Tactile sensitivity and stereognosis"
+      ],
+      correct: "Gross manual dexterity and the speed of moving blocks from one compartment to another"
+    },
+    {
+      id: 45,
+      question: "What instrument is universally used in occupational therapy clinics to objectively measure a client's gross grip strength?",
+      options: [
+        "Pinch gauge",
+        "Hydraulic Hand Dynamometer",
+        "Goniometer",
+        "Aestheticometer"
+      ],
+      correct: "Hydraulic Hand Dynamometer"
+    },
+    {
+      id: 46,
+      question: "To measure standard pinch strength (tip pinch, lateral pinch, palmar pinch), an OT uses which specific device?",
+      options: [
+        "Dynamometer",
+        "Pinch Gauge",
+        "Volumeter",
+        "Algometer"
+      ],
+      correct: "Pinch Gauge"
+    },
+    {
+      id: 47,
+      question: "The ability to identify a common object (like a key, coin, or safety pin) placed in the hand solely through manual touch and manipulation, without visual input, is called:",
+      options: [
+        "Graphesthesia",
+        "Stereognosis",
+        "Two-point discrimination",
+        "Proprioception"
+      ],
+      correct: "Stereognosis"
+    },
+    {
+      id: 48,
+      question: "A client with a weak grasp wants to write independently. Which adaptive equipment is most appropriate to recommend?",
+      options: [
+        "A button hook",
+        "A weighted built-up pen grip or a universal cuff holding a pen",
+        "Elastic shoelaces",
+        "A long-handled shoehorn"
+      ],
+      correct: "A weighted built-up pen grip or a universal cuff holding a pen"
+    },
+    {
+      id: 49,
+      question: "Which manual therapy intervention involves repetitive, intensive practice of functional manual activities using the affected hand while restraining the unaffected hand in a mitt or sling?",
+      options: [
+        "Neurodevelopmental Treatment (NDT)",
+        "Constraint-Induced Movement Therapy (CIMT)",
+        "Proprioceptive Neuromuscular Facilitation (PNF)",
+        "Sensory Integration Therapy"
+      ],
+      correct: "Constraint-Induced Movement Therapy (CIMT)"
+    },
+    {
+      id: 50,
+      question: "What is the benefit of using 'graded pegs' (from extra-large to extra-small) in manual rehabilitation?",
+      options: [
+        "It provides a method to change the difficulty from gross grasp to fine precision pinches as the client improves.",
+        "It focuses entirely on lower limb balance.",
+        "It removes the need for patient motivation.",
+        "It is an purely passive sensory stimulation technique."
+      ],
+      correct: "It provides a method to change the difficulty from gross grasp to fine precision pinches as the client improves."
+    }
+  ]
+},
+{
+  id: 35,
+  subject: "Computer Fundamentals & Anatomy Physiology",
+  totalMarks: 50,
+  questions: [
+    // COMPUTER FUNDAMENTALS - 25 QUESTIONS
+
+    {
+      id: 1,
+      question: "Who is known as the Father of Computers?",
+      options: ["Alan Turing", "Charles Babbage", "Bill Gates", "John von Neumann"],
+      correct: "Charles Babbage"
+    },
+    {
+      id: 2,
+      question: "Which component is commonly known as the brain of the computer?",
+      options: ["RAM", "Monitor", "CPU", "Hard Disk"],
+      correct: "CPU"
+    },
+    {
+      id: 3,
+      question: "Which unit of the CPU performs arithmetic and logical operations?",
+      options: ["Control Unit", "ALU", "RAM", "ROM"],
+      correct: "ALU"
+    },
+    {
+      id: 4,
+      question: "Which of the following is an example of an input device?",
+      options: ["Monitor", "Printer", "Keyboard", "Speaker"],
+      correct: "Keyboard"
+    },
+    {
+      id: 5,
+      question: "Which of the following is an output device?",
+      options: ["Mouse", "Scanner", "Keyboard", "Printer"],
+      correct: "Printer"
+    },
+    {
+      id: 6,
+      question: "What is the full form of RAM?",
+      options: [
+        "Read Access Memory",
+        "Random Access Memory",
+        "Rapid Action Memory",
+        "Run Access Module"
+      ],
+      correct: "Random Access Memory"
+    },
+    {
+      id: 7,
+      question: "RAM is classified as which type of memory?",
+      options: [
+        "Non-volatile memory",
+        "Volatile memory",
+        "Optical memory",
+        "Permanent memory"
+      ],
+      correct: "Volatile memory"
+    },
+    {
+      id: 8,
+      question: "Which memory retains its data even when the computer is switched off?",
+      options: ["RAM", "Cache", "ROM", "Register"],
+      correct: "ROM"
+    },
+    {
+      id: 9,
+      question: "How many bits are present in one byte?",
+      options: ["4 bits", "8 bits", "16 bits", "32 bits"],
+      correct: "8 bits"
+    },
+    {
+      id: 10,
+      question: "Which of the following is an example of secondary storage?",
+      options: ["Register", "Cache Memory", "Hard Disk", "RAM"],
+      correct: "Hard Disk"
+    },
+    {
+      id: 11,
+      question: "Which storage device generally provides faster data access and has no moving mechanical parts?",
+      options: [
+        "Floppy Disk",
+        "Solid State Drive (SSD)",
+        "Magnetic Tape",
+        "CD-ROM"
+      ],
+      correct: "Solid State Drive (SSD)"
+    },
+    {
+      id: 12,
+      question: "What is the primary function of an operating system?",
+      options: [
+        "To create only documents",
+        "To manage computer hardware and software resources",
+        "To scan printed photographs",
+        "To increase internet speed automatically"
+      ],
+      correct: "To manage computer hardware and software resources"
+    },
+    {
+      id: 13,
+      question: "Which of the following is an example of an operating system?",
+      options: ["Microsoft Word", "Google Chrome", "Linux", "Adobe Photoshop"],
+      correct: "Linux"
+    },
+    {
+      id: 14,
+      question: "Which type of software is designed to perform specific tasks for users?",
+      options: [
+        "System Software",
+        "Application Software",
+        "Firmware",
+        "Device Hardware"
+      ],
+      correct: "Application Software"
+    },
+    {
+      id: 15,
+      question: "What is the process of starting a computer and loading its operating system called?",
+      options: ["Formatting", "Booting", "Scanning", "Debugging"],
+      correct: "Booting"
+    },
+    {
+      id: 16,
+      question: "Which of the following is a web browser?",
+      options: ["MS Excel", "Google Chrome", "Windows", "MS Paint"],
+      correct: "Google Chrome"
+    },
+    {
+      id: 17,
+      question: "What does URL stand for?",
+      options: [
+        "Uniform Resource Locator",
+        "Universal Reference Link",
+        "Unified Record Location",
+        "User Resource Language"
+      ],
+      correct: "Uniform Resource Locator"
+    },
+    {
+      id: 18,
+      question: "What is the full form of HTTP?",
+      options: [
+        "HyperText Transfer Protocol",
+        "High Transfer Text Program",
+        "Hyperlink Technical Transfer Process",
+        "Home Tool Transfer Protocol"
+      ],
+      correct: "HyperText Transfer Protocol"
+    },
+    {
+      id: 19,
+      question: "Which type of network generally connects computers within a limited geographical area, such as an office or building?",
+      options: ["WAN", "MAN", "LAN", "PAN"],
+      correct: "LAN"
+    },
+    {
+      id: 20,
+      question: "What is the primary function of a modem?",
+      options: [
+        "To print documents",
+        "To convert signals for data communication",
+        "To store permanent files",
+        "To display images"
+      ],
+      correct: "To convert signals for data communication"
+    },
+    {
+      id: 21,
+      question: "What does DBMS stand for?",
+      options: [
+        "Data Backup Management System",
+        "Database Management System",
+        "Digital Binary Management Software",
+        "Data Basic Memory System"
+      ],
+      correct: "Database Management System"
+    },
+    {
+      id: 22,
+      question: "In a relational database table, which key uniquely identifies each record?",
+      options: ["Foreign Key", "Primary Key", "Duplicate Key", "Secondary Field"],
+      correct: "Primary Key"
+    },
+    {
+      id: 23,
+      question: "Which of the following best describes a computer virus?",
+      options: [
+        "A physical damage to the monitor",
+        "A malicious program that can infect computer files or systems",
+        "A type of computer processor",
+        "A normal operating system update"
+      ],
+      correct: "A malicious program that can infect computer files or systems"
+    },
+    {
+      id: 24,
+      question: "What is phishing in computer security?",
+      options: [
+        "A method of increasing computer memory",
+        "A fraudulent attempt to obtain sensitive information through deceptive messages or websites",
+        "A process of formatting a hard disk",
+        "A technique for repairing computer hardware"
+      ],
+      correct: "A fraudulent attempt to obtain sensitive information through deceptive messages or websites"
+    },
+    {
+      id: 25,
+      question: "What is the main purpose of a firewall?",
+      options: [
+        "To increase screen brightness",
+        "To protect a network or computer by controlling incoming and outgoing traffic",
+        "To create backup documents",
+        "To improve keyboard performance"
+      ],
+      correct: "To protect a network or computer by controlling incoming and outgoing traffic"
+    },
+
+    // ANATOMY & PHYSIOLOGY - 25 QUESTIONS
+
+    {
+      id: 26,
+      question: "What is the basic structural and functional unit of the human body?",
+      options: ["Tissue", "Organ", "Cell", "Organ System"],
+      correct: "Cell"
+    },
+    {
+      id: 27,
+      question: "Which cell organelle is primarily responsible for producing ATP?",
+      options: ["Ribosome", "Mitochondrion", "Lysosome", "Golgi Apparatus"],
+      correct: "Mitochondrion"
+    },
+    {
+      id: 28,
+      question: "Which cell structure contains most of the genetic material (DNA) in a human cell?",
+      options: ["Cytoplasm", "Nucleus", "Cell Membrane", "Ribosome"],
+      correct: "Nucleus"
+    },
+    {
+      id: 29,
+      question: "How many basic types of tissues are present in the human body?",
+      options: ["Two", "Three", "Four", "Five"],
+      correct: "Four"
+    },
+    {
+      id: 30,
+      question: "Which tissue covers body surfaces and lines internal organs and cavities?",
+      options: ["Connective Tissue", "Muscular Tissue", "Nervous Tissue", "Epithelial Tissue"],
+      correct: "Epithelial Tissue"
+    },
+    {
+      id: 31,
+      question: "Which type of connective tissue connects muscles to bones?",
+      options: ["Ligament", "Tendon", "Cartilage", "Adipose Tissue"],
+      correct: "Tendon"
+    },
+    {
+      id: 32,
+      question: "Which structure connects one bone to another bone at a joint?",
+      options: ["Tendon", "Ligament", "Muscle", "Nerve"],
+      correct: "Ligament"
+    },
+    {
+      id: 33,
+      question: "How many bones are normally present in an adult human skeleton?",
+      options: ["201", "206", "212", "218"],
+      correct: "206"
+    },
+    {
+      id: 34,
+      question: "Which is the longest bone in the human body?",
+      options: ["Humerus", "Tibia", "Femur", "Fibula"],
+      correct: "Femur"
+    },
+    {
+      id: 35,
+      question: "Which part of the skeleton protects the brain?",
+      options: ["Rib Cage", "Vertebral Column", "Skull", "Pelvis"],
+      correct: "Skull"
+    },
+    {
+      id: 36,
+      question: "Which type of muscle is generally under voluntary control?",
+      options: ["Smooth Muscle", "Cardiac Muscle", "Skeletal Muscle", "Visceral Muscle"],
+      correct: "Skeletal Muscle"
+    },
+    {
+      id: 37,
+      question: "Which muscle tissue is found in the walls of the heart?",
+      options: ["Smooth Muscle", "Cardiac Muscle", "Skeletal Muscle", "Striated Voluntary Muscle"],
+      correct: "Cardiac Muscle"
+    },
+    {
+      id: 38,
+      question: "Which part of the nervous system consists of the brain and spinal cord?",
+      options: [
+        "Peripheral Nervous System",
+        "Central Nervous System",
+        "Autonomic Nervous System",
+        "Somatic Nervous System"
+      ],
+      correct: "Central Nervous System"
+    },
+    {
+      id: 39,
+      question: "What is the basic structural and functional unit of the nervous system?",
+      options: ["Nephron", "Neuron", "Alveolus", "Osteon"],
+      correct: "Neuron"
+    },
+    {
+      id: 40,
+      question: "Which part of the brain is primarily responsible for balance and coordination of voluntary movements?",
+      options: ["Cerebrum", "Cerebellum", "Medulla Oblongata", "Hypothalamus"],
+      correct: "Cerebellum"
+    },
+    {
+      id: 41,
+      question: "Which chamber of the heart pumps oxygenated blood into the aorta?",
+      options: [
+        "Right Atrium",
+        "Right Ventricle",
+        "Left Atrium",
+        "Left Ventricle"
+      ],
+      correct: "Left Ventricle"
+    },
+    {
+      id: 42,
+      question: "Which blood cells are mainly responsible for transporting oxygen?",
+      options: [
+        "White Blood Cells",
+        "Red Blood Cells",
+        "Platelets",
+        "Lymphocytes"
+      ],
+      correct: "Red Blood Cells"
+    },
+    {
+      id: 43,
+      question: "Which component of blood plays the primary role in blood clotting?",
+      options: ["Red Blood Cells", "Plasma", "Platelets", "Neutrophils"],
+      correct: "Platelets"
+    },
+    {
+      id: 44,
+      question: "Which blood cells help the body fight infections?",
+      options: [
+        "Red Blood Cells",
+        "White Blood Cells",
+        "Platelets",
+        "Erythrocytes"
+      ],
+      correct: "White Blood Cells"
+    },
+    {
+      id: 45,
+      question: "Where does the exchange of oxygen and carbon dioxide primarily occur in the lungs?",
+      options: ["Trachea", "Bronchi", "Alveoli", "Larynx"],
+      correct: "Alveoli"
+    },
+    {
+      id: 46,
+      question: "Which muscle is primarily responsible for normal breathing?",
+      options: ["Biceps", "Diaphragm", "Triceps", "Deltoid"],
+      correct: "Diaphragm"
+    },
+    {
+      id: 47,
+      question: "Which organ produces bile that helps in the digestion of fats?",
+      options: ["Stomach", "Pancreas", "Liver", "Small Intestine"],
+      correct: "Liver"
+    },
+    {
+      id: 48,
+      question: "Where does most nutrient absorption take place in the digestive system?",
+      options: ["Stomach", "Small Intestine", "Large Intestine", "Oesophagus"],
+      correct: "Small Intestine"
+    },
+    {
+      id: 49,
+      question: "What is the functional unit of the kidney?",
+      options: ["Neuron", "Alveolus", "Nephron", "Osteon"],
+      correct: "Nephron"
+    },
+    {
+      id: 50,
+      question: "Which hormone produced by the pancreas helps lower blood glucose levels?",
+      options: ["Adrenaline", "Thyroxine", "Insulin", "Cortisol"],
+      correct: "Insulin"
+    }
+  ]
+},
   {
     id: 24,
     subject: 'General Medical & Surgical Condition (DPT 1st exam)',
@@ -11071,13 +11421,619 @@ const questionSets = [
     ]
   },
   {
-    id: 29,
-    subject: 'DHT'
-  },
+  id: 29,
+  subject: "ADCP - Theories of Counselling & Psychotherapy",
+  totalMarks: 50,
+  questions: [
+    {
+      id: 1,
+      question: "Who is considered the father of psychoanalysis?",
+      options: ["Carl Rogers", "Sigmund Freud", "B.F. Skinner", "Aaron Beck"],
+      correct: "Sigmund Freud"
+    },
+    {
+      id: 2,
+      question: "The concept of \"Unconscious mind\" was given by?",
+      options: ["Freud", "Jung", "Adler", "Maslow"],
+      correct: "Freud"
+    },
+    {
+      id: 3,
+      question: "Structure of personality Id, Ego, Superego was proposed by?",
+      options: ["Freud", "Rogers", "Ellis", "Perls"],
+      correct: "Freud"
+    },
+    {
+      id: 4,
+      question: "\"Collective Unconscious\" concept is related to?",
+      options: ["Freud", "Adler", "Carl Jung", "Frankl"],
+      correct: "Carl Jung"
+    },
+    {
+      id: 5,
+      question: "Inferiority and Superiority complex was given by?",
+      options: ["Alfred Adler", "Karen Horney", "Jung", "Freud"],
+      correct: "Alfred Adler"
+    },
+    {
+      id: 6,
+      question: "Client-Centered Therapy was developed by?",
+      options: ["Carl Rogers", "Freud", "Beck", "Skinner"],
+      correct: "Carl Rogers"
+    },
+    {
+      id: 7,
+      question: "Unconditional Positive Regard (UPR) is a core concept of?",
+      options: ["Person-Centered Therapy", "Behaviour Therapy", "Psychoanalysis", "CBT"],
+      correct: "Person-Centered Therapy"
+    },
+    {
+      id: 8,
+      question: "Who gave the Rational Emotive Behavior Therapy (REBT)?",
+      options: ["Albert Ellis", "Aaron Beck", "Rogers", "Wolpe"],
+      correct: "Albert Ellis"
+    },
+    {
+      id: 9,
+      question: "ABC Model (Activating Event, Belief, Consequence) is part of?",
+      options: ["REBT", "Psychoanalysis", "Gestalt", "Existential"],
+      correct: "REBT"
+    },
+    {
+      id: 10,
+      question: "Cognitive Therapy was developed by?",
+      options: ["Aaron Beck", "Ellis", "Rogers", "Perls"],
+      correct: "Aaron Beck"
+    },
+    {
+      id: 11,
+      question: "Behavior Therapy is based on?",
+      options: ["Learning principles", "Unconscious", "Self-actualization", "Free will"],
+      correct: "Learning principles"
+    },
+    {
+      id: 12,
+      question: "Systematic Desensitization was introduced by?",
+      options: ["Joseph Wolpe", "Skinner", "Pavlov", "Bandura"],
+      correct: "Joseph Wolpe"
+    },
+    {
+      id: 13,
+      question: "Operant Conditioning concept was given by?",
+      options: ["B.F. Skinner", "Pavlov", "Watson", "Thorndike"],
+      correct: "B.F. Skinner"
+    },
+    {
+      id: 14,
+      question: "Classical Conditioning was given by?",
+      options: ["Ivan Pavlov", "Skinner", "Bandura", "Ellis"],
+      correct: "Ivan Pavlov"
+    },
+    {
+      id: 15,
+      question: "Social Learning Theory was proposed by?",
+      options: ["Albert Bandura", "Skinner", "Rogers", "Freud"],
+      correct: "Albert Bandura"
+    },
+    {
+      id: 16,
+      question: "Gestalt Therapy was founded by?",
+      options: ["Fritz Perls", "Rogers", "Frankl", "May"],
+      correct: "Fritz Perls"
+    },
+    {
+      id: 17,
+      question: "\"Here and Now\" principle is the main focus of?",
+      options: ["Gestalt Therapy", "Psychoanalysis", "Behaviour Therapy", "Adlerian"],
+      correct: "Gestalt Therapy"
+    },
+    {
+      id: 18,
+      question: "Logotherapy was developed by?",
+      options: ["Viktor Frankl", "Rollo May", "Irvin Yalom", "Rogers"],
+      correct: "Viktor Frankl"
+    },
+    {
+      id: 19,
+      question: "The concept of \"Will to Meaning\" is related to?",
+      options: ["Logotherapy", "REBT", "CBT", "Psychoanalysis"],
+      correct: "Logotherapy"
+    },
+    {
+      id: 20,
+      question: "Existential Therapy mainly focuses on?",
+      options: ["Freedom, Choice, Responsibility", "Past", "Learning", "Beliefs"],
+      correct: "Freedom, Choice, Responsibility"
+    },
+    {
+      id: 21,
+      question: "Who is the founder of Individual Psychology?",
+      options: ["Alfred Adler", "Jung", "Freud", "Adler"],
+      correct: "Alfred Adler"
+    },
+    {
+      id: 22,
+      question: "Life Style analysis is a technique of?",
+      options: ["Adlerian Therapy", "Gestalt", "CBT", "Psychoanalysis"],
+      correct: "Adlerian Therapy"
+    },
+    {
+      id: 23,
+      question: "Empty Chair Technique is used in?",
+      options: ["Gestalt Therapy", "REBT", "Psychoanalysis", "Behaviour Therapy"],
+      correct: "Gestalt Therapy"
+    },
+    {
+      id: 24,
+      question: "Transference and Counter-transference are concepts of?",
+      options: ["Psychoanalysis", "Person-Centered", "Behaviour", "Cognitive"],
+      correct: "Psychoanalysis"
+    },
+    {
+      id: 25,
+      question: "Free Association and Dream Analysis are techniques of?",
+      options: ["Psychoanalysis", "CBT", "Gestalt", "REBT"],
+      correct: "Psychoanalysis"
+    },
+    {
+      id: 26,
+      question: "The goal of Person-Centered Therapy is?",
+      options: ["Self-Actualization", "Change in beliefs", "Insight into unconscious", "Learning new behaviour"],
+      correct: "Self-Actualization"
+    },
+    {
+      id: 27,
+      question: "Congruence, Empathy and UPR are core conditions given by?",
+      options: ["Carl Rogers", "Freud", "Ellis", "Beck"],
+      correct: "Carl Rogers"
+    },
+    {
+      id: 28,
+      question: "Cognitive distortions like Catastrophizing was described by?",
+      options: ["Aaron Beck", "Ellis", "Bandura", "Rogers"],
+      correct: "Aaron Beck"
+    },
+    {
+      id: 29,
+      question: "Token Economy is a technique of?",
+      options: ["Behaviour Therapy", "Psychoanalysis", "Gestalt", "Existential"],
+      correct: "Behaviour Therapy"
+    },
+    {
+      id: 30,
+      question: "Who gave the concept of Self-Actualization?",
+      options: ["Abraham Maslow", "Rogers", "Freud", "Jung"],
+      correct: "Abraham Maslow"
+    },
+    {
+      id: 31,
+      question: "Archetypes concept was given by?",
+      options: ["Jung", "Freud", "Adler", "Horney"],
+      correct: "Jung"
+    },
+    {
+      id: 32,
+      question: "\"What is man?\" is the central question of?",
+      options: ["Existential Therapy", "Behaviour Therapy", "CBT", "Psychoanalysis"],
+      correct: "Existential Therapy"
+    },
+    {
+      id: 33,
+      question: "Aversion Therapy is used for?",
+      options: ["Removing unwanted habits", "Dream analysis", "Self exploration", "Finding meaning"],
+      correct: "Removing unwanted habits"
+    },
+    {
+      id: 34,
+      question: "The full form of CBT is?",
+      options: ["Cognitive Behaviour Therapy", "Central Basic Therapy", "Counselling Behaviour Technique", "None"],
+      correct: "Cognitive Behaviour Therapy"
+    },
+    {
+      id: 35,
+      question: "In REBT, the client is taught to dispute?",
+      options: ["Irrational Beliefs", "Dreams", "Past events", "Behaviour"],
+      correct: "Irrational Beliefs"
+    },
+    {
+      id: 36,
+      question: "Who is known for Hierarchy of Needs?",
+      options: ["Maslow", "Rogers", "Freud", "Skinner"],
+      correct: "Maslow"
+    },
+    {
+      id: 37,
+      question: "Observational Learning is key concept of?",
+      options: ["Bandura", "Pavlov", "Skinner", "Watson"],
+      correct: "Bandura"
+    },
+    {
+      id: 38,
+      question: "\"Man is the architect of his own life\" is belief of?",
+      options: ["Adlerian Therapy", "Psychoanalysis", "Behaviourism", "None"],
+      correct: "Adlerian Therapy"
+    },
+    {
+      id: 39,
+      question: "Phenomenological approach is used in?",
+      options: ["Person-Centered Therapy", "Psychoanalysis", "Behaviour Therapy", "REBT"],
+      correct: "Person-Centered Therapy"
+    },
+    {
+      id: 40,
+      question: "The therapist is called \"Facilitator\" in?",
+      options: ["Person-Centered", "Psychoanalysis", "Behaviour", "Gestalt"],
+      correct: "Person-Centered"
+    },
+    {
+      id: 41,
+      question: "Defence Mechanisms concept was given by?",
+      options: ["Sigmund Freud", "Anna Freud elaborated", "Both", "Rogers"],
+      correct: "Both"
+    },
+    {
+      id: 42,
+      question: "Oedipus Complex occurs in which psychosexual stage?",
+      options: ["Phallic stage", "Oral", "Anal", "Latency"],
+      correct: "Phallic stage"
+    },
+    {
+      id: 43,
+      question: "Person-Centered Therapy is also called?",
+      options: ["Non-directive Therapy", "Directive", "Psychoanalysis", "Gestalt"],
+      correct: "Non-directive Therapy"
+    },
+    {
+      id: 44,
+      question: "The most important quality of a counsellor according to Rogers is?",
+      options: ["Empathy", "Sympathy", "Knowledge", "Experience"],
+      correct: "Empathy"
+    },
+    {
+      id: 45,
+      question: "Modelling technique is part of?",
+      options: ["Social Learning Theory", "Psychoanalysis", "Gestalt", "Logotherapy"],
+      correct: "Social Learning Theory"
+    },
+    {
+      id: 46,
+      question: "Existential Vacuum concept was given by?",
+      options: ["Viktor Frankl", "May", "Yalom", "Perls"],
+      correct: "Viktor Frankl"
+    },
+    {
+      id: 47,
+      question: "Birth Order importance was emphasized by?",
+      options: ["Alfred Adler", "Freud", "Jung", "Rogers"],
+      correct: "Alfred Adler"
+    },
+    {
+      id: 48,
+      question: "The focus of Counselling is on?",
+      options: ["Normal people with problems", "Only abnormal", "Only mental illness", "None"],
+      correct: "Normal people with problems"
+    },
+    {
+      id: 49,
+      question: "Eclectic approach means?",
+      options: ["Using techniques from different theories", "Using only one theory", "Only psychoanalysis", "Only behaviour"],
+      correct: "Using techniques from different theories"
+    },
+    {
+      id: 50,
+      question: "The ultimate goal of all counselling theories is?",
+      options: ["To help client help themselves", "To give advice", "To solve problem for client", "To control client"],
+      correct: "To help client help themselves"
+    }
+  ]
+},
   {
     id: 30,
-    subject: 'ADCP'
-  },
+  subject: "ADCP - Physiological Assessment",
+  totalMarks: 50,
+  questions: [
+    {
+      id: 1,
+      question: "Physiological assessment mainly measures:",
+      options: ["Bodily functions", "Only thoughts", "Only behaviour", "Dreams"],
+      correct: "Bodily functions"
+    },
+    {
+      id: 2,
+      question: "Which branch studies relation between physiological processes and behaviour?",
+      options: ["Physiological Psychology", "Social Psychology", "Abnormal", "Industrial"],
+      correct: "Physiological Psychology"
+    },
+    {
+      id: 3,
+      question: "Full form of EEG is:",
+      options: ["Electroencephalogram", "Electrocardiogram", "Electromyogram", "None"],
+      correct: "Electroencephalogram"
+    },
+    {
+      id: 4,
+      question: "EEG measures activity of:",
+      options: ["Brain", "Heart", "Muscle", "Skin"],
+      correct: "Brain"
+    },
+    {
+      id: 5,
+      question: "ECG measures:",
+      options: ["Heart's electrical activity", "Brain", "Muscle", "Eye"],
+      correct: "Heart's electrical activity"
+    },
+    {
+      id: 6,
+      question: "EMG measures:",
+      options: ["Muscle activity", "Brain", "Heart", "Skin conductance"],
+      correct: "Muscle activity"
+    },
+    {
+      id: 7,
+      question: "GSR stands for:",
+      options: ["Galvanic Skin Response", "General Skin Response", "Galvanic System Reaction", "None"],
+      correct: "Galvanic Skin Response"
+    },
+    {
+      id: 8,
+      question: "GSR is an indicator of:",
+      options: ["Emotional arousal", "Intelligence", "Memory", "Hunger"],
+      correct: "Emotional arousal"
+    },
+    {
+      id: 9,
+      question: "Which is NOT a physiological measure?",
+      options: ["Rorschach Test", "EEG", "Heart Rate", "Blood Pressure"],
+      correct: "Rorschach Test"
+    },
+    {
+      id: 10,
+      question: "Polygraph is commonly known as:",
+      options: ["Lie detector", "Brain scanner", "IQ test", "Personality test"],
+      correct: "Lie detector"
+    },
+    {
+      id: 11,
+      question: "Polygraph measures mainly:",
+      options: ["Respiration, GSR, Blood Pressure, Heart Rate", "Only brain", "Only muscle", "Only eye"],
+      correct: "Respiration, GSR, Blood Pressure, Heart Rate"
+    },
+    {
+      id: 12,
+      question: "Biofeedback is a technique where:",
+      options: ["Person learns to control physiological responses", "Doctor controls patient", "Machine controls person", "None"],
+      correct: "Person learns to control physiological responses"
+    },
+    {
+      id: 13,
+      question: "The autonomic nervous system has two parts:",
+      options: ["Sympathetic and Parasympathetic", "Central and Peripheral", "Somatic and Autonomic", "Brain and Spinal cord"],
+      correct: "Sympathetic and Parasympathetic"
+    },
+    {
+      id: 14,
+      question: "Fight or Flight response is controlled by:",
+      options: ["Sympathetic Nervous System", "Parasympathetic", "Somatic", "Central"],
+      correct: "Sympathetic Nervous System"
+    },
+    {
+      id: 15,
+      question: "Rest and Digest is function of:",
+      options: ["Parasympathetic", "Sympathetic", "Somatic", "None"],
+      correct: "Parasympathetic"
+    },
+    {
+      id: 16,
+      question: "Normal human heart rate is:",
+      options: ["72 beats/min", "120", "50", "200"],
+      correct: "72 beats/min"
+    },
+    {
+      id: 17,
+      question: "Normal Blood Pressure is considered:",
+      options: ["120/80 mmHg", "140/90", "100/60", "180/120"],
+      correct: "120/80 mmHg"
+    },
+    {
+      id: 18,
+      question: "Which instrument measures blood pressure?",
+      options: ["Sphygmomanometer", "Thermometer", "EEG machine", "ECG machine"],
+      correct: "Sphygmomanometer"
+    },
+    {
+      id: 19,
+      question: "Alpha waves in EEG appear when person is:",
+      options: ["Relaxed with closed eyes", "Deeply sleeping", "Highly active", "In stress"],
+      correct: "Relaxed with closed eyes"
+    },
+    {
+      id: 20,
+      question: "Beta waves indicate:",
+      options: ["Active, alert state", "Deep sleep", "Relaxation", "Coma"],
+      correct: "Active, alert state"
+    },
+    {
+      id: 21,
+      question: "Delta waves are seen in:",
+      options: ["Deep sleep", "Alert state", "Relaxation", "Anxiety"],
+      correct: "Deep sleep"
+    },
+    {
+      id: 22,
+      question: "Theta waves are associated with:",
+      options: ["Drowsiness and early sleep", "Alertness", "Active thinking", "None"],
+      correct: "Drowsiness and early sleep"
+    },
+    {
+      id: 23,
+      question: "The main neurotransmitter of parasympathetic system is:",
+      options: ["Acetylcholine", "Adrenaline", "Dopamine", "Serotonin"],
+      correct: "Acetylcholine"
+    },
+    {
+      id: 24,
+      question: "Adrenaline is secreted by:",
+      options: ["Adrenal gland", "Thyroid", "Pituitary", "Pancreas"],
+      correct: "Adrenal gland"
+    },
+    {
+      id: 25,
+      question: "Pupil dilation occurs during:",
+      options: ["Sympathetic arousal", "Parasympathetic", "Sleep", "Rest"],
+      correct: "Sympathetic arousal"
+    },
+    {
+      id: 26,
+      question: "Which hormone is called stress hormone?",
+      options: ["Cortisol", "Insulin", "Thyroxine", "Estrogen"],
+      correct: "Cortisol"
+    },
+    {
+      id: 27,
+      question: "HRV stands for:",
+      options: ["Heart Rate Variability", "High Rate Value", "Heart Rhythm Volume", "None"],
+      correct: "Heart Rate Variability"
+    },
+    {
+      id: 28,
+      question: "Low HRV indicates:",
+      options: ["High stress / low adaptability", "Good health", "Relaxation", "Fitness"],
+      correct: "High stress / low adaptability"
+    },
+    {
+      id: 29,
+      question: "Pupillometry measures:",
+      options: ["Pupil size changes", "Heart rate", "Brain waves", "Muscle tension"],
+      correct: "Pupil size changes"
+    },
+    {
+      id: 30,
+      question: "Eye-tracking is used to assess:",
+      options: ["Attention and interest", "Blood pressure", "Hearing", "Memory only"],
+      correct: "Attention and interest"
+    },
+    {
+      id: 31,
+      question: "Skin Conductance increases when:",
+      options: ["Sweat gland activity increases", "Person is calm", "Sleeping", "None"],
+      correct: "Sweat gland activity increases"
+    },
+    {
+      id: 32,
+      question: "Which physiological measure is best for measuring muscle tension in anxiety?",
+      options: ["EMG", "EEG", "ECG", "GSR"],
+      correct: "EMG"
+    },
+    {
+      id: 33,
+      question: "Which lobe of brain is assessed for emotional regulation in EEG?",
+      options: ["Frontal lobe", "Occipital", "Temporal", "Parietal"],
+      correct: "Frontal lobe"
+    },
+    {
+      id: 34,
+      question: "fMRI measures:",
+      options: ["Blood flow in brain", "Electrical activity directly", "Muscle", "Heart"],
+      correct: "Blood flow in brain"
+    },
+    {
+      id: 35,
+      question: "PET scan uses:",
+      options: ["Radioactive tracer", "X-ray only", "Sound waves", "Magnets only"],
+      correct: "Radioactive tracer"
+    },
+    {
+      id: 36,
+      question: "Which is a non-invasive method?",
+      options: ["EEG", "Surgery", "Implanting electrodes", "None"],
+      correct: "EEG"
+    },
+    {
+      id: 37,
+      question: "The most commonly used physiological assessment in counselling for relaxation training is:",
+      options: ["Biofeedback", "PET", "MRI", "CT scan"],
+      correct: "Biofeedback"
+    },
+    {
+      id: 38,
+      question: "Temperature biofeedback is useful for:",
+      options: ["Migraine and Raynaud's disease", "Deafness", "Blindness", "Fever"],
+      correct: "Migraine and Raynaud's disease"
+    },
+    {
+      id: 39,
+      question: "Respiratory rate increases during:",
+      options: ["Anxiety", "Relaxation", "Sleep", "Meditation"],
+      correct: "Anxiety"
+    },
+    {
+      id: 40,
+      question: "Which system controls involuntary functions like heartbeat?",
+      options: ["Autonomic Nervous System", "Somatic", "Central", "Voluntary"],
+      correct: "Autonomic Nervous System"
+    },
+    {
+      id: 41,
+      question: "The normal respiratory rate in adult is:",
+      options: ["12-20 breaths/min", "40-60", "5-8", "100"],
+      correct: "12-20 breaths/min"
+    },
+    {
+      id: 42,
+      question: "Cortisol level is highest in:",
+      options: ["Morning", "Midnight", "Evening", "Afternoon"],
+      correct: "Morning"
+    },
+    {
+      id: 43,
+      question: "Which physiological indicator is used in sleep studies (Polysomnography)?",
+      options: ["All of these (EEG, EMG, EOG, Respiration)", "Only EEG", "Only ECG", "Only GSR"],
+      correct: "All of these (EEG, EMG, EOG, Respiration)"
+    },
+    {
+      id: 44,
+      question: "EOG measures:",
+      options: ["Eye movements", "Heart", "Brain", "Muscle"],
+      correct: "Eye movements"
+    },
+    {
+      id: 45,
+      question: "The unit of GSR is measured in:",
+      options: ["Microsiemens / Ohms (Kilo-ohms)", "Volts", "Kg", "Decibel"],
+      correct: "Microsiemens / Ohms (Kilo-ohms)"
+    },
+    {
+      id: 46,
+      question: "The best time to take baseline physiological measure is:",
+      options: ["At rest, calm state", "After exercise", "During stress", "After eating"],
+      correct: "At rest, calm state"
+    },
+    {
+      id: 47,
+      question: "Habituation in GSR means:",
+      options: ["Decrease in response after repeated stimulus", "Increase", "No change", "None"],
+      correct: "Decrease in response after repeated stimulus"
+    },
+    {
+      id: 48,
+      question: "Which is considered a drawback of physiological assessment?",
+      options: ["Expensive equipment and expertise needed", "Very cheap", "No expertise needed", "No error"],
+      correct: "Expensive equipment and expertise needed"
+    },
+    {
+      id: 49,
+      question: "Biofeedback training is most effective for:",
+      options: ["Anxiety, Hypertension, Headache", "Broken leg", "Infection", "Cancer only"],
+      correct: "Anxiety, Hypertension, Headache"
+    },
+    {
+      id: 50,
+      question: "In counselling, physiological assessment is used for:",
+      options: ["Understanding mind-body connection and planning intervention", "Only labeling disease", "Only giving medicine"],
+      correct: "Understanding mind-body connection and planning intervention"
+    }
+  ]
+},
   {
     id: 31,
     subject: 'DPT 1st year'

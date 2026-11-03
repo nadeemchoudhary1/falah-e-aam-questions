@@ -13,6 +13,13 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const setUser = useQuizStore((state) => state.setUser);
+  const setLoginInputEmail = useQuizStore((state) => state.setLoginInputEmail);
+
+  useEffect(() => {
+    return () => {
+      setLoginInputEmail('');
+    };
+  }, [setLoginInputEmail]);
 
   useEffect(() => {
     const storedUser = quizStorage.getStoredUser();
@@ -135,7 +142,9 @@ const Login = () => {
                 type="text"
                 value={email}
                 onChange={(e) => {
-                  setEmail(e.target.value);
+                  const val = e.target.value;
+                  setEmail(val);
+                  setLoginInputEmail(val);
                   if (error) setError('');
                 }}
                 placeholder="you@example.com"

@@ -8,6 +8,7 @@ import Quiz from './components/Quiz';
 import Submission from './components/Submission';
 import AlreadySubmitted from './components/AlreadySubmitted';
 import ProtectedRoute from './components/ProtectedRoute';
+import ClearStorageButton from './components/ClearStorageButton';
 import './styles/index.css';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
 
   return (
     <Router>
+      {/* Top-Right Clear Local Storage & Login Again Button (Restricted to Authorized Students Only) */}
+      <ClearStorageButton />
+
       <Routes>
         <Route path="/" element={<Splash />} />
 

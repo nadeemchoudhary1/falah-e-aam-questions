@@ -156,6 +156,42 @@ router.post('/submit', validateSubmission, handleValidationErrors, async (req, r
   }
 });
 
+
+// Whitelist of allowed student IDs and name keywords for clearing submission & retaking exam
+const ALLOWED_RESET_STUDENT_IDS = [54, 55, 66, 67, 68, 69, 70, 71, 76, 77, 94, 95, 660, 770];
+const ALLOWED_RESET_KEYWORDS = ['sifatullah', 'altamash', 'farheen', 'saqiba', 'khan mohd', 'khanmohd'];
+
+// Reset student submission endpoint (strictly restricted to authorized student IDs only)
+router.post('/reset-student-submission', (req, res) => {
+  try {
+    const { userId, email } = req.body;
+    const idNum = userId !== undefined && userId !== null ? Number(userId) : null;
+    const emailLower = email ? String(email).trim().toLowerCase() : '';
+
+    const isAllowedId = idNum !== null && !isNaN(idNum) && ALLOWED_RESET_STUDENT_IDS.includes(idNum);
+    const isAllowedEmail = emailLower && ALLOWED_RESET_KEYWORDS.some((kw) => emailLower.includes(kw));
+
+    if (!isAllowedId && !isAllowedEmail) {
+      return res.status(403).json({
+        success: false,
+        message: 'Reset submission is restricted to authorized student IDs only.'
+      });
+    }
+
+    authService.clearSubmission(idNum, emailLower);
+    res.json({
+      success: true,
+      message: 'Student submission records cleared successfully.'
+    });
+  } catch (error) {
+    console.error('Submission reset error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Server error while resetting student submission.'
+    });
+  }
+});
+
 // Health check
 router.get('/health', (req, res) => {
   res.json({ success: true, message: 'Server is running' });

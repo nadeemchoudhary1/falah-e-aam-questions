@@ -24,12 +24,15 @@ const useQuizStore = create((set, get) => ({
   isQuizSubmitted: initialIsSubmitted,
   submissionLoading: false,
 
-  // UI state
+  // UI state & Login input tracking for selective tools
+  loginInputEmail: '',
   showTimerWarning: false,
   loading: false,
   error: null,
 
   // Actions
+  setLoginInputEmail: (loginInputEmail) => set({ loginInputEmail }),
+
   setUser: (user) => {
     quizStorage.saveStoredUser(user);
     if (user) {
@@ -153,7 +156,8 @@ const useQuizStore = create((set, get) => ({
       currentQuestion: 0,
       answers: {},
       questionSet: null,
-      isQuizSubmitted: false
+      isQuizSubmitted: false,
+      loginInputEmail: ''
     });
   }
 }));

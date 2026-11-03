@@ -72,6 +72,29 @@ class AuthService {
     writeSubmittedCredentials(submissions);
   }
 
+  clearSubmission(userId, email) {
+    const submissions = readSubmittedCredentials();
+    const idNum = userId !== undefined && userId !== null ? Number(userId) : null;
+    const idStr = userId !== undefined && userId !== null ? String(userId) : null;
+    const emailLower = email ? String(email).trim().toLowerCase() : '';
+
+    const initialLength = submissions.length;
+    const filtered = submissions.filter((sub) => {
+      if (idNum !== null && !isNaN(idNum) && (Number(sub.userId) === idNum || String(sub.userId) === idStr)) {
+        return false;
+      }
+      if (emailLower && sub.email && sub.email.trim().toLowerCase() === emailLower) {
+        return false;
+      }
+      return true;
+    });
+
+    if (filtered.length !== initialLength) {
+      writeSubmittedCredentials(filtered);
+    }
+    return true;
+  }
+
   getUserQuestions(questionSetId) {
     const questionSet = questionSets.find(qs => qs.id === questionSetId);
     if (questionSet) {

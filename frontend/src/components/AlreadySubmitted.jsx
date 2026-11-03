@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import useQuizStore from '../context/quizStore';
 import { quizStorage } from '../utils/quizStorage';
 import institutionLogo from '../assets/logo.png';
+import { detectAllowedStudent, performClearStorageAndLogin } from '../utils/studentReset';
 
 const AlreadySubmitted = () => {
   const navigate = useNavigate();
@@ -43,6 +44,12 @@ const AlreadySubmitted = () => {
     ? new Date(storedResult.submittedAt).toLocaleString()
     : 'Verified & Recorded in System';
 
+  // Check if candidate is authorized for reset & re-examination
+  const authorizedStudent = detectAllowedStudent({
+    user: currentUser,
+    submissionResult: storedResult
+  });
+
   const handleDifferentExamLogin = () => {
     // Preserve the current submission result so returning or reloading retains data
     if (storedResult) {
@@ -50,6 +57,15 @@ const AlreadySubmitted = () => {
     }
     logout();
     navigate('/login', { replace: true });
+  };
+
+  const handleAuthorizedClearStorage = async () => {
+    const studentName = authorizedStudent?.displayName || authorizedStudent?.name || candidateName;
+    const confirmed = window.confirm(
+      `Clear local storage and log in again for ${studentName}?\n\nThis will remove your previous examination records and allow you to take the exam again.`
+    );
+    if (!confirmed) return;
+    await performClearStorageAndLogin(authorizedStudent);
   };
 
   return (
@@ -112,7 +128,7 @@ const AlreadySubmitted = () => {
             <div className="flex justify-between items-center text-sm">
               <span className="text-gray-500 font-medium">Submission Record:</span>
               <span className="font-bold text-emerald-600 flex items-center gap-1">
-                <span>✓</span> Verified & Recorded
+                <span>✓</span> Verified &amp; Recorded
               </span>
             </div>
 
@@ -122,13 +138,25 @@ const AlreadySubmitted = () => {
             </div>
           </div>
 
-          <button
-            onClick={handleDifferentExamLogin}
-            className="w-full bg-primary hover:bg-slate-800 text-white font-bold py-3.5 px-4 rounded-xl transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-          >
-            <span>Log in with Credentials for a Different Exam</span>
-            <span>→</span>
-          </button>
+          <div className="space-y-3">
+            <button
+              onClick={handleDifferentExamLogin}
+              className="w-full bg-primary hover:bg-slate-800 text-white font-bold py-3.5 px-4 rounded-xl transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+            >
+              <span>Log in with Credentials for a Different Exam</span>
+              <span>→</span>
+            </button>
+
+            {authorizedStudent && (
+              <button
+                type="button"
+                onClick={handleAuthorizedClearStorage}
+                className="w-full bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 text-white font-bold py-3.5 px-4 rounded-xl transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-sm"
+              >
+                <span>🔄 Clear Local Storage &amp; Login Again ({authorizedStudent.displayName || authorizedStudent.name})</span>
+              </button>
+            )}
+          </div>
         </div>
       </motion.div>
     </div>
