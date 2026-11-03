@@ -241,8 +241,8 @@ const users = [
   },
   {
     id: 67,
-    email: "khanmohd_set3@fpmi.net",
-    password: "khanmohd_dht_set3",
+    email: "khanmohd_set5@fpmi.net",
+    password: "khanmohd_dht_set5",
     questionSet: 2,
     subject: "Anatomy and Physiology - 1st Year",
     name: "Khan Mohd",
